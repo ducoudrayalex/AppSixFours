@@ -22,10 +22,10 @@
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/lecteurRSS.js"></script>
         <script src="js/modernizr-2.6.2.min.js"></script>
     </head>
     <body> 
+<!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
         <div data-role="page" id="accueil" data-theme="c" data-title="Accueil">           
                 <!-- Start Nav Structure -->
                 <div class="cn-button" id="cn-button"><p>Menu</p></div>
@@ -54,7 +54,8 @@
         </div>
         <script src="js/polyfills.js"></script>
         <script src="js/demo2.js"></script>
-
+<!----------FIN PAGE D'ACCUEIL----------->
+<!-----------PAGE AGENDA---------->
         <div data-role="page" id="agenda" data-title="Agenda">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
@@ -88,6 +89,11 @@
                             <input type="submit" data-inline="true" value="Submit">
                         </form>        
                     </div>
+                    <div>
+                    <ul id="listeFluxRSSAgenda" data-role="listview" data-inset="true" data-theme="b" >
+
+                    </ul>
+                </div>
                 </div>   
             </div>
             <div data-role="footer" data-theme="b">
@@ -100,6 +106,18 @@
                         <li><a href="#infostravaux" data-icon="info" data-transition="slide">Infotravo</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div data-role="page" id="PageContenuFluxAgenda" data-title="Actus">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Agenda</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="flip" data-rel="dialog" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="content" id="contenuRSSAgenda">
             </div>
         </div>
         <div data-role="page" id="avoir" data-title="A voir">
@@ -137,8 +155,8 @@
             </div>
             <div data-role="main" class="ui-content" >
                 <div>
-                    <ul  id="elementFluxRSS" data-role="listview" data-theme="b" >
-
+                    <ul id="elementFluxRSS" data-role="listview" data-inset="true" data-theme="b" >
+                        
                     </ul>
                 </div>
             </div>
@@ -154,7 +172,7 @@
                 </div>
             </div>
         </div>
-        <div data-role="page" id="contenuFlux" data-title="Actus">
+        <div data-role="page" id="PageContenuFluxActus" data-title="Actus">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Actus</h1>
@@ -163,9 +181,8 @@
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
-            <div data-role="content" id="contenuRSS">
+            <div data-role="content" id="contenuRSSActus">
             </div>
-
         </div>
         <div data-role="page" id="pratique" data-title="Pratique">
             <div data-role="header" data-position="fixed" data-theme="b">
@@ -237,6 +254,6 @@
                 </div>
             </div>
         </div>
-
+        <script type="text/javascript" charset="utf-8" src="js/lecteurRSS.js"></script>
     </body>
 </html>
