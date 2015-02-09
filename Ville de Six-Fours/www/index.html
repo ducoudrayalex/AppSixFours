@@ -23,12 +23,13 @@
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/modernizr-2.6.2.min.js"></script>
+        <script src="cordova.js"></script>
     </head>
     <body> 
 <!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
         <div data-role="page" id="accueil" data-theme="c" data-title="Accueil">           
                 <!-- Start Nav Structure -->
-                <div class="cn-button" id="cn-button"><p>Menu</p></div>
+                <div class="cn-button" id="cn-button"><p id="libellemenu">Menu</p></div>
                 <div class="cn-wrapper" id="cn-wrapper">
                     <ul>
                         <li><a href="#agenda"><span>Agenda</span></a></li>
@@ -56,7 +57,7 @@
         <script src="js/demo2.js"></script>
 <!----------FIN PAGE D'ACCUEIL----------->
 <!-----------PAGE AGENDA---------->
-        <div data-role="page" id="agenda" data-title="Agenda">
+        <div data-role="page" id="agenda" data-title="Agenda" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Agenda</h1>
@@ -108,6 +109,7 @@
                 </div>
             </div>
         </div>
+
         <div data-role="page" id="PageContenuFluxAgenda" data-title="Actus">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
@@ -120,6 +122,8 @@
             <div data-role="content" id="contenuRSSAgenda">
             </div>
         </div>
+<!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
+<!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
         <div data-role="page" id="avoir" data-title="A voir">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
@@ -144,6 +148,8 @@
                 </div>
             </div>
         </div>
+<!-- - - - - - - - - -FIN PAGE A VOIR- - - - - - - - -->
+<!-- - - - - - - - - -PAGE ACTUS - - - - - - - - -->
         <div data-role="page" id="actus" data-title="Actus" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
@@ -184,6 +190,8 @@
             <div data-role="content" id="contenuRSSActus">
             </div>
         </div>
+<!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
+<!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
         <div data-role="page" id="pratique" data-title="Pratique">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
@@ -228,6 +236,8 @@
                 </div>
             </div>
         </div>
+<!-- - - - - - - - - - -FIN PAGE PRATIQUE- - - - - - - - -->
+<!-- - - - - - - - - - -PAGE INFOSTRAVAUX- - - - - - - - - -->
         <div data-role="page" id="infostravaux" data-title="Travaux">
 
             <div data-role="header" data-position="fixed" data-theme="b">
@@ -254,6 +264,7 @@
                 </div>
             </div>
         </div>
+<!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
         <script type="text/javascript" charset="utf-8" src="js/lecteurRSS.js"></script>
     </body>
 </html>

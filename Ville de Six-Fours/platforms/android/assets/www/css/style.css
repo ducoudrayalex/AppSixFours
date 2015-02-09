@@ -1,0 +1,72 @@
+
+h1{
+    font-weight: bold;
+    
+}
+.jumbotron p{
+    font-size:small;
+}
+#contenuRSS{
+    background-color:coral;
+    
+}
+.ui-footer{
+    position:fixed;
+    bottom: 0px;
+    width:100%;
+}
+.ui-header{
+    width:100%;
+}
+#menu{
+    position:fixed;
+    bottom:0px;
+    
+}
+#menu2{
+    padding-left:0px;
+    
+    bottom:0px;
+    
+}
+.container-fluid{
+    padding-left:0px;
+    width:100%;
+}
+.col-xs-4{
+    padding-right:-25px;
+    padding-left:0px;
+}
+#services,#urgences{
+    display:none;
+}
+#menu{
+    opacity:0.4;
+}
+
+.ui-page-theme-c{
+    background-image: url('../img/fondappli2.jpg');
+    height:100%;
+    background-size:cover;
+}
+.ui-page-theme-d{
+    background-color:orange;
+}
+.img{
+    border-radius:25px;
+    width:20%;
+    height:20%;
+}
+
+.ui-dialog-contain {
+  width: 92.5%;
+  max-width: 500px;
+  margin: 10% auto 15px auto;
+  padding: 10px;
+  position: relative;
+  top: -15px;
+}
+
+p{
+    padding-top:30%;
+}

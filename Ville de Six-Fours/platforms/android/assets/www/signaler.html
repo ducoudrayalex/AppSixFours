@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ville de Six-Fours</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
+        <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.min.css"/>
+        <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
+        <link rel="stylesheet" href="css/jquery.mobile.inline-png-1.4.5.min.css"/>
+        <link rel="stylesheet" href="css/jquery.mobile.external-png-1.4.5.min.css"/>
+        <!--<link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">-->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <!-- Include the jQuery library -->
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/capture.js"></script>
+    </head>
+    <body>
+        <div data-role="dialog" id="signaler" data-close-btn="right">
+            <div data-role="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
+                <h1 class="ui-title" role="heading" aria-level="1">Signaler un problème</h1>
+            </div>
+                <form method="post" action="demoform.asp">
+                    <div class="ui-field-contain">
+                        <label for="nom">Nom :</label>
+                        <input type="text" name="nom" id="nom">
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" name="prenom" id="prenom">
+                        <label for="email">E-mail :</label>
+                        <input type="email" name="email" id="email" placeholder="Votre email..">
+                        <label for="info">Message :</label>
+                        <textarea name="message" id="info"></textarea>
+                        <img id="myImage" src="" alt="photo" style="display:none" /> 
+                        <input type="button" onclick="capturePhoto();" value="Joindre une photo"  />
+                        <input type="button" onclick="deletePhoto();" value="Supprimer la photo" />
+                        <input type="button" onclick="sendform();"  value="Envoyer"  />
+                    </div>
+                </form> 
+        </div>
+
+    </body>
+</html>
