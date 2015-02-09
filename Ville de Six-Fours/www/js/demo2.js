@@ -9,11 +9,11 @@
 
 	function handler(){
 	  if(!open){
-	    this.innerHTML = "<p>Close</p>";
+	    this.innerHTML = '<p class="libellemenu">Close</p>';
 	    classie.add(wrapper, 'opened-nav');
 	  }
 	  else{
-	    this.innerHTML = "<p>Menu</p>";
+	    this.innerHTML = '<p class="libellemenu">Menu</p>';
 		classie.remove(wrapper, 'opened-nav');
 	  }
 	  open = !open;
