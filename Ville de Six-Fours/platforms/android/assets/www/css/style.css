@@ -57,7 +57,9 @@ h1{
     width:20%;
     height:20%;
 }
-
+.ui-icon-calendrier:after {
+	background-image: url("../img/calendrier-mini.jpg");
+}
 .ui-dialog-contain {
   width: 92.5%;
   max-width: 500px;
@@ -67,6 +69,12 @@ h1{
   top: -15px;
 }
 
-p{
+.libellemenu{
     padding-top:30%;
+}
+
+.icon-calendrier{
+    
+   
+    
 }
