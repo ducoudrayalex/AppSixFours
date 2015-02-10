@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$("document").bind("pageinit",function () {
     var pictureSource;   // picture source
     var destinationType; // sets the format of returned value
-$('getPhoto').on('click',capturePhoto);
+$('#getPhoto').on('click',capturePhoto);
     document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady() {

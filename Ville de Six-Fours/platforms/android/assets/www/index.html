@@ -15,17 +15,17 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css"/>
 
-<!--        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/demo.css">
-        <link rel="stylesheet" href="css/component1.css">-->
+        <!--        <link rel="stylesheet" href="css/normalize.css">
+                <link rel="stylesheet" href="css/demo.css">
+                <link rel="stylesheet" href="css/component1.css">-->
         <!-- Include the jQuery library -->
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-<!--        <script src="js/modernizr-2.6.2.min.js"></script>-->
-        <script type="text/javascript" src="js/lecteurRSS.js"></script>
-        <script type="text/javascript" src="js/capture.js"></script>
-        <script src="cordova.js"></script>
+        <!--        <script src="js/modernizr-2.6.2.min.js"></script>-->
+        
+<!--        <script type="text/javascript" src="js/capture.js"></script>-->
+<!--        <script src="cordova.js"></script>-->
     </head>
     <body> 
         <!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
@@ -69,14 +69,14 @@
                             <a href="signaler.html" class="ui-btn menu ui-icon-signaler ui-btn-icon-left" data-transition="flip">Signaler</a>
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
-<!--                <script src="js/polyfills.js"></script>
-                <script src="js/demo1.js"></script>-->
-                <!-- - - - - - - - -FIN PAGE D'ACCUEIL- - - - - - - - - -->
-                <!-- - - - - - - - - -PAGE AGENDA- - - - - - - - -->
-                <div data-role="page" id="Agenda" data-title="Agenda" data-theme="d">
+        </div>
+        <!--                <script src="js/polyfills.js"></script>
+                        <script src="js/demo1.js"></script>-->
+        <!-- - - - - - - - -FIN PAGE D'ACCUEIL- - - - - - - - - -->
+        <!-- - - - - - - - - -PAGE AGENDA- - - - - - - - -->
+        <div data-role="page" id="Agenda" data-title="Agenda" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Agenda</h1>
@@ -140,11 +140,11 @@
             </div>
             <div data-role="content" id="contenuRSSAgenda">
             </div>
-            
+
         </div>
-                <!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
-                <!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
-                <div data-role="page" id="Avoir" data-title="A voir">
+        <!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
+        <!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
+        <div data-role="page" id="Avoir" data-title="A voir">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>A voir</h1>
@@ -168,15 +168,15 @@
                 </div>
             </div>
         </div>
-                <!-- - - - - - - - - -FIN PAGE A VOIR- - - - - - - - -->
-                <!-- - - - - - - - - -PAGE ACTUS - - - - - - - - -->
-                <div data-role="page" id="Actus" data-title="Actus" data-theme="d">
+        <!-- - - - - - - - - -FIN PAGE A VOIR- - - - - - - - -->
+        <!-- - - - - - - - - -PAGE ACTUS - - - - - - - - -->
+        <div data-role="page" id="Actus" data-title="Actus" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Actus</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
                     <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
-                    <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
             <div data-role="main" class="ui-content" >
@@ -210,9 +210,9 @@
             <div data-role="content" id="contenuRSSActus">
             </div>
         </div>
-                <!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
-                <!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
-                <div data-role="page" id="Pratique" data-title="Pratique">
+        <!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
+        <!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
+        <div data-role="page" id="Pratique" data-title="Pratique">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Pratique</h1>
@@ -256,9 +256,9 @@
                 </div>
             </div>
         </div>
-                <!-- - - - - - - - - - -FIN PAGE PRATIQUE- - - - - - - - -->
-                <!-- - - - - - - - - - -PAGE INFOSTRAVAUX- - - - - - - - - -->
-                <div data-role="page" id="infostravaux" data-title="Travaux">
+        <!-- - - - - - - - - - -FIN PAGE PRATIQUE- - - - - - - - -->
+        <!-- - - - - - - - - - -PAGE INFOSTRAVAUX- - - - - - - - - -->
+        <div data-role="page" id="infostravaux" data-title="Travaux">
 
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
@@ -284,7 +284,7 @@
                 </div>
             </div>
         </div>
-                <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
-                
-                </body>
-                </html>
+        <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
+<script type="text/javascript" src="js/lecteurRSS.js"></script>
+    </body>
+</html>
