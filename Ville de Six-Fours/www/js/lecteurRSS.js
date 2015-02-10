@@ -27,8 +27,8 @@ function AjaxListview(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencont
                 <small>' + valeur.datePublication + '</small>\
                 </a></li>';
             });
-            $(idlistview).append(retourHtml);// insersion dans index.html  
-            //$(idlistview).listview('refresh');
+            $(idlistview).html(retourHtml);// insersion dans index.html  
+            $(idlistview).listview('refresh');
             $('.' + liencontenu).click(function () {
                 var id = parseInt($(this).attr('id'));
                 $.mobile.changePage(idcontenuflux, {
@@ -43,7 +43,7 @@ function AjaxListview(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencont
             alert("Pour consulter les actus et l'agenda veuillez vous connecter à internet");
         },
         complete: function () {
-            $(idlistview).listview('refresh');
+            //$(idlistview).listview('refresh');
             
         }
     });

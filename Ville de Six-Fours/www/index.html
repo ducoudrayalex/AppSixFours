@@ -14,37 +14,38 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css"/>
-
-        <!--        <link rel="stylesheet" href="css/normalize.css">
-                <link rel="stylesheet" href="css/demo.css">
-                <link rel="stylesheet" href="css/component1.css">-->
+        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">    
+        <!--    <link rel="stylesheet" href="css/normalize.css">
+                        <link rel="stylesheet" href="css/demo.css">
+                        <link rel="stylesheet" href="css/component1.css">-->
         <!-- Include the jQuery library -->
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <!--        <script src="js/modernizr-2.6.2.min.js"></script>-->
-        
-<!--        <script type="text/javascript" src="js/capture.js"></script>-->
-<!--        <script src="cordova.js"></script>-->
+
+        <!--        <script type="text/javascript" src="js/capture.js"></script>-->
+        <!--        <script src="cordova.js"></script>-->
     </head>
     <body> 
         <!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
         <div data-role="page" id="accueil" data-theme="c" data-title="Accueil">           
-            <!--                 Start Nav Structure 
-                            <div class="cn-button" id="cn-button"><p class="libellemenu">Menu</p></div>
-                            <div class="cn-wrapper" id="cn-wrapper">
-                                <ul>
-                                    <li><a href="#agenda"><span class="icon-calendrier"></span></a></li>
-                                    <li><a href="#avoir"><span>A voir</span></a></li>
-                                    <li><a href="#actus"><span>Actus</span></a></li>
-                                    <li><a href="#pratique"><span>Pratique</span></a></li>
-                                    <li><a href="#infostravaux"><span>InfoTravo</span></a></li>
-                                    <li><a href="#signalement"><span>Signaler</span></a></li>
-                                    <li><a href="https://fr-fr.facebook.com/VilleDeSixFoursLesPlages"><span>facebook</span></a></li>
-                                </ul>
-                            </div>
-                             End of Nav Structure -->
 
+            <ul class="form">
+                <li><a class="facebook" href="https://fr-fr.facebook.com/VilleDeSixFoursLesPlages"><i class="fa fa-facebook-square"></i></a></li>         
+                <li><a class="siteweb" href="http://www.ville-six-fours.fr/"><i class="fa fa-globe"></i></a></li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+                    $('ul.form li a').click(
+                            function (e) {
+                                e.preventDefault(); // prevent the default action
+                                e.stopPropagation; // stop the click from bubbling
+                                $(this).closest('ul').find('.selected').removeClass('selected');
+                                $(this).parent().addClass('selected');
+                            });
+                });
+            </script>
             <div data-role="footer" data-theme="b">
                 <div class="container-fluid" >
                     <div class="col-xs-12">
@@ -285,6 +286,6 @@
             </div>
         </div>
         <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
-<script type="text/javascript" src="js/lecteurRSS.js"></script>
+        <script type="text/javascript" src="js/lecteurRSS.js"></script>
     </body>
 </html>
