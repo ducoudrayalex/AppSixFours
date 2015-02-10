@@ -13,7 +13,7 @@ $(document).ready(function () {
         success: function (xml){
             $(xml).find('item').each(function (id, valeur) {
             var elementRSS = {
-                image: $(valeur).find('image').text(),
+                image: $(valeur).find('url').text(),
                 titre: $(valeur).find('title').text(),
                 description: $(valeur).find('description').text(),
                 datePublication: $(valeur).find('pubDate').text()
@@ -38,7 +38,7 @@ $(document).ready(function () {
             });
             //console.log(stockFluxRSS[id].description);
             $(idcontenuRSS).html('<div class="jumbotron"><h2 class="well">' + stockFluxRSS[id].titre + '</h2>\
-					<img src="' + stockFluxRSS[id].image + '" alt="image article"><p>' + stockFluxRSS[id].description + '</p></div>');
+					<p><img src="' + stockFluxRSS[id].image + '" class="img-responsive" alt="image article">' + stockFluxRSS[id].description + '</p></div>');
         });
         },
         error: function(xml, status, xhr){

@@ -60,6 +60,21 @@ h1{
 .ui-icon-calendrier:after {
 	background-image: url("../img/calendrier-mini.jpg");
 }
+.ui-icon-actus:after {
+	background-image: url("../img/actus-mini.jpg");
+}
+.ui-icon-pratique:after {
+	background-image: url("../img/pratique-mini.jpg");
+}
+.ui-icon-info:after {
+	background-image: url("../img/info-mini.jpg");
+}
+.ui-icon-avoir:after {
+	background-image: url("../img/oeil-mini.jpg");
+}
+.ui-icon-signaler:after {
+	background-image: url("../img/signaler-mini.jpg");
+}
 .ui-dialog-contain {
   width: 92.5%;
   max-width: 500px;
@@ -73,8 +88,14 @@ h1{
     padding-top:30%;
 }
 
-.icon-calendrier{
-    
-   
-    
+.menu{
+    width:100%;
+}
+.container-fluid{
+    padding-left:0px;
+    padding-right: 0px;
+}
+.col-xs-4{
+    padding-left: 5px;
+    padding-right:5px;
 }

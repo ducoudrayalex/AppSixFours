@@ -21,6 +21,7 @@
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/capture.js"></script>
+        <script src="cordova.js"></script>
     </head>
     <body>
         <div data-role="dialog" id="signaler" data-close-btn="right" data-theme="a">
@@ -38,8 +39,7 @@
                         <label for="info">Message :</label>
                         <textarea name="message" id="info"></textarea>
                         <img id="myImage" src="" alt="photo" style="display:none" /> 
-                        <input type="button" onclick="capturePhoto();" value="Joindre une photo"  />
-                        <input type="button" onclick="deletePhoto();" value="Supprimer la photo" />
+                        <input type="button" id="getPhoto" value="Joindre une photo"  />
                         <input type="button" onclick="sendform();"  value="Envoyer"  />
                     </div>
                 </form> 

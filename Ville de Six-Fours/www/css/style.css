@@ -6,7 +6,7 @@ h1{
 .jumbotron p{
     font-size:small;
 }
-#contenuRSS{
+#contenuRSSActus,#contenuRSSAgenda{
     background-color:coral;
     
 }

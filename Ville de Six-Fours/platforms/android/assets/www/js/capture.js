@@ -1,58 +1,55 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log(navigator.camera);
-}
-var npath = '';
+var pictureSource;   // picture source
+var destinationType; // sets the format of returned value
 
-function sendform() {
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+}
+document.getElementById('getPhoto').addEventListener('click',capturePhoto,false);
+
+function clearCache() {
+    navigator.camera.cleanup();
+}
+
+var retries = 0;
+function onCapturePhoto(fileURI) {
+    var win = function (r) {
+        clearCache();
+        retries = 0;
+        alert('Done!');
+    };
+
+    var fail = function (error) {
+        if (retries == 0) {
+            retries++;
+            setTimeout(function () {
+                onCapturePhoto(fileURI);
+            }, 1000);
+        } else {
+            retries = 0;
+            clearCache();
+            alert('Ups. Something wrong happens!');
+        }
+    };
+
     var options = new FileUploadOptions();
     options.fileKey = "file";
-    options.fileName = npath.substr(npath.lastIndexOf('/') + 1);
+    options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
-
-    var nomimage = Math.floor(Math.random() * 15000000);
+    options.params = {}; // if we need to send parameters to the server request
     var ft = new FileTransfer();
-    ft.upload(npath, upload_url + '?nomimage=' + nomimage,
-            successCallback,
-            errorCallback,
-            options);
+    ft.upload(fileURI, encodeURI("http://host/upload"), win, fail, options);
 }
-function successCallback(){
-    alert("Photo upload");
-}
-function errorCallback(){
-    alert("Photo upload");
-}
+
 function capturePhoto() {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50, targetWidth: 600});
+    navigator.camera.getPicture(onCapturePhoto, onFail, {
+        quality: 100,
+        destinationType: destinationType.FILE_URI
+    });
 }
 
-function onFail() {
-    var msg = 'Impossible de lancer l\'appareil photo';
-    navigator.notification.alert(msg, null, '');
+function onFail(message) {
+    alert('Failed because: ' + message);
 }
-
-function onPhotoDataSuccess(imageData) {
-    // On r�cup�re le chemin de la photo
-    npath = imageData.replace("file://localhost", '');
-    var path = imageData.replace("file://localhost", '');
-
-    // On affiche la preview
-    $('#myImage').attr('src', path);
-    $('#myImage').show();
-
-    // On affiche le boutton de suppression
-    $('#button_deletePhoto').show();
-}
-
-function deletePhoto() {
-    $('#myImage').attr('src', '');
-    $('#myImage').hide();
-    $('#button_deletePhoto').hide();
-}
-
-
-
-
-
-	
