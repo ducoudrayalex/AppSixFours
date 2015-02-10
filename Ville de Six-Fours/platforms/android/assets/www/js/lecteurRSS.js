@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //var fluxRSS = "news_FR_flux.xml"; //URL du flux
-    var fluxRSSActus = "http://www.ville-six-fours.fr/feed/feedname";
-    
+    //var fluxRSSActus = "http://www.ville-six-fours.fr/feed/feedname";
+    //var fluxRSSAgenda = "http://www.ville-six-fours.fr/feed/feedevents";
     function AjaxListview(fluxRSS,idlistview,idcontenuflux,idcontenuRSS,liencontenu){
         console.log(fluxRSS);
         var stockFluxRSS = [];
@@ -23,14 +23,14 @@ $(document).ready(function () {
 
         $.each(stockFluxRSS, function (id, valeur) {
             retourHtml += '<li><a id ="' + id + '"  class="'+liencontenu+'">\
-                <p><h1 class="titre">' + valeur.titre + '</h1></p>;\
+                <p><h1 class="titre">' + valeur.titre + '</h1></p>\
                 <small>' + valeur.datePublication + '</small>\
                 </a></li>';
                 
                 
         });
         $(idlistview).append(retourHtml);// insersion dans index.html  
-        //$("#elementFluxRSS").listview();
+        $(idlistview).listview();
         $('.'+liencontenu).click(function () {
             var id = parseInt($(this).attr('id'));
             $.mobile.changePage(idcontenuflux, {
@@ -38,14 +38,15 @@ $(document).ready(function () {
             });
             //console.log(stockFluxRSS[id].description);
             $(idcontenuRSS).html('<div class="jumbotron"><h2 class="well">' + stockFluxRSS[id].titre + '</h2>\
-					<p><img src="' + stockFluxRSS[id].image + '" class="img-responsive" alt="image article">' + stockFluxRSS[id].description + '</p></div>');
+					<p><img src="' + stockFluxRSS[id].image + '" class="img-responsive" alt="image article"><br>' + stockFluxRSS[id].description + '</p></div>');
         });
         },
         error: function(xml, status, xhr){
-            console.log(status);
+            alert("Pour consulter les actus et l'agenda veuillez vous connecter à internet");
         },
         complete: function(){
-            $(idlistview).listview();
+            //$(idlistview).listview();
+            alert("ok");
         }
     });
     function processusOK(xml,idlistview,idcontenuflux,idcontenuRSS) {
@@ -61,7 +62,7 @@ $(document).ready(function () {
     }
     }
     
-    var fluxRSSAgenda = "http://www.ville-six-fours.fr/feed/feedevents";
+    
     
    AjaxListview("http://www.ville-six-fours.fr/feed/feedname","#elementFluxRSS","#PageContenuFluxActus","#contenuRSSActus","liencontenuactus");
    AjaxListview("http://www.ville-six-fours.fr/feed/feedevents","#listeFluxRSSAgenda","#PageContenuFluxAgenda","#contenuRSSAgenda","liencontenuagenda");
