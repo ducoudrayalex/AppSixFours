@@ -1,58 +1,58 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log(navigator.camera);
-}
-var npath = '';
+$("document").bind("pageinit",function () {
+    var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value
+$('#getPhoto').on('click',capturePhoto);
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-function sendform() {
-    var options = new FileUploadOptions();
-    options.fileKey = "file";
-    options.fileName = npath.substr(npath.lastIndexOf('/') + 1);
-    options.mimeType = "image/jpeg";
+    function onDeviceReady() {
+        pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
+    }
+    
 
-    var nomimage = Math.floor(Math.random() * 15000000);
-    var ft = new FileTransfer();
-    ft.upload(npath, upload_url + '?nomimage=' + nomimage,
-            successCallback,
-            errorCallback,
-            options);
-}
-function successCallback(){
-    alert("Photo upload");
-}
-function errorCallback(){
-    alert("Photo upload");
-}
-function capturePhoto() {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50, targetWidth: 600});
-}
+    function clearCache() {
+        navigator.camera.cleanup();
+    }
 
-function onFail() {
-    var msg = 'Impossible de lancer l\'appareil photo';
-    navigator.notification.alert(msg, null, '');
-}
+    var retries = 0;
+    function onCapturePhoto(fileURI) {
+        var win = function (r) {
+            clearCache();
+            retries = 0;
+            alert('Done!');
+        };
 
-function onPhotoDataSuccess(imageData) {
-    // On r�cup�re le chemin de la photo
-    npath = imageData.replace("file://localhost", '');
-    var path = imageData.replace("file://localhost", '');
+        var fail = function (error) {
+            if (retries == 0) {
+                retries++;
+                setTimeout(function () {
+                    onCapturePhoto(fileURI);
+                }, 1000);
+            } else {
+                retries = 0;
+                clearCache();
+                alert('Ups. Something wrong happens!');
+            }
+        };
 
-    // On affiche la preview
-    $('#myImage').attr('src', path);
-    $('#myImage').show();
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+        options.mimeType = "image/jpeg";
+        options.params = {}; // if we need to send parameters to the server request
+        var ft = new FileTransfer();
+        ft.upload(fileURI, encodeURI("http://host/upload"), win, fail, options);
+    }
 
-    // On affiche le boutton de suppression
-    $('#button_deletePhoto').show();
-}
+    function capturePhoto() {
+        navigator.camera.getPicture(onCapturePhoto, onFail, {
+            quality: 100,
+            destinationType: destinationType.FILE_URI
+        });
+    }
 
-function deletePhoto() {
-    $('#myImage').attr('src', '');
-    $('#myImage').hide();
-    $('#button_deletePhoto').hide();
-}
-
-
-
-
-
-	
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+    
+});

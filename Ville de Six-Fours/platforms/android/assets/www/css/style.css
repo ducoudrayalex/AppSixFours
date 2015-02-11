@@ -1,34 +1,55 @@
-
 h1{
     font-weight: bold;
-    
+}
+
+.col-xs-6{
+    padding-right:5px;
+    padding-left:5px;
+    height:100%;
+}
+h5{
+    color:black;
+    font-weight:bold;
+    text-decoration:underline;
+    font-family: 'Times New Roman',Georgia,sans-serif;
 }
 .jumbotron p{
-    font-size:small;
+    font-size:10px;
+    font-family: 'Times New Roman',Georgia,sans-serif;
+    color:black;
 }
-#contenuRSS{
-    background-color:coral;
+
+.jumbotron{
+    padding:3px 3px 3px 3px;
+    box-shadow:#059 3px 3px 3px;
+    height:100%;
+      
+}
+.well{
     
+}
+h4{
+    color:#000;
+}
+#contenuRSSAgenda,#contenuRSSActus{
+    background-color:orange;
+    height:100%;
+    margin-bottom:0px;
+}
+
+.ui-content{
+    height:700px;
 }
 .ui-footer{
     position:fixed;
     bottom: 0px;
     width:100%;
+    
 }
 .ui-header{
     width:100%;
 }
-#menu{
-    position:fixed;
-    bottom:0px;
-    
-}
-#menu2{
-    padding-left:0px;
-    
-    bottom:0px;
-    
-}
+
 .container-fluid{
     padding-left:0px;
     width:100%;
@@ -47,34 +68,143 @@ h1{
 .ui-page-theme-c{
     background-image: url('../img/fondappli2.jpg');
     height:100%;
+    width:100%;
     background-size:cover;
 }
 .ui-page-theme-d{
     background-color:orange;
+    height:100%
 }
+
 .img{
     border-radius:25px;
     width:20%;
     height:20%;
 }
 .ui-icon-calendrier:after {
-	background-image: url("../img/calendrier-mini.jpg");
+    background-image: url("../img/calendrier-mini.jpg");
+}
+.ui-icon-actus:after {
+    background-image: url("../img/actus-mini.jpg");
+}
+.ui-icon-pratique:after {
+    background-image: url("../img/pratique-mini.jpg");
+}
+.ui-icon-info:after {
+    background-image: url("../img/info-mini.jpg");
+}
+.ui-icon-avoir:after {
+    background-image: url("../img/oeil-mini.jpg");
+}
+.ui-icon-signaler:after {
+    background-image: url("../img/signaler-mini.jpg");
+}
+.fb:after {
+    background-image: url("../img/facebook-logo.jpg");
 }
 .ui-dialog-contain {
-  width: 92.5%;
-  max-width: 500px;
-  margin: 10% auto 15px auto;
-  padding: 10px;
-  position: relative;
-  top: -15px;
+    width: 92.5%;
+    max-width: 500px;
+    margin: 10% auto 15px auto;
+    padding: 10px;
+    position: relative;
+    top: -15px;
 }
 
 .libellemenu{
     padding-top:30%;
 }
 
-.icon-calendrier{
-    
-   
-    
+.menu{
+    width:100%;
 }
+.container-fluid{
+    padding-left:0px;
+    padding-right: 0px;
+}
+.col-xs-4{
+    padding-left: 5px;
+    padding-right:5px;
+}
+
+ul.form {
+    left:0%;
+    top:45%;
+    position:fixed;
+    background:#fff;
+    width:15%;
+    margin:auto;
+    padding:0;
+    list-style: none;
+    overflow:hidden;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;	
+
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    box-shadow:  1px 1px 10px rgba(0, 0, 0, 0.1);	
+}
+
+.form li a {
+    width:100%;
+    padding-left:20px;
+    height:50px;
+    line-height:50px;
+    display:block;
+    overflow:hidden;
+    position:relative;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:14px;
+    color:#686868;
+
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;			
+}
+
+.form li a:hover {
+    background:#efefef;
+}
+
+.form li a.facebook {
+    border-left:5px solid #008747;
+}
+
+.form li a.siteweb {
+    border-left:5px solid #cf2130;
+}
+
+.form li:first-child a:hover, .form li:first-child a {
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.form li:last-child a:hover, .form li:last-child a {
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.form li a:hover i {
+    color:#ea4f35;
+}
+
+.form i {
+    margin-right:15px;
+
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;	
+}
+
+.form li.selected a {
+    background:#efefef;
+}
+
+

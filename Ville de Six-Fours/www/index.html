@@ -14,80 +14,252 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css"/>
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/demo.css">
-        <link rel="stylesheet" href="css/component1.css">
+        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">    
+        <!--    <link rel="stylesheet" href="css/normalize.css">
+                        <link rel="stylesheet" href="css/demo.css">
+                        <link rel="stylesheet" href="css/component1.css">-->
         <!-- Include the jQuery library -->
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/modernizr-2.6.2.min.js"></script>
-        
+        <!--        <script src="js/modernizr-2.6.2.min.js"></script>-->
+
+        <!--        <script type="text/javascript" src="js/capture.js"></script>-->
+        <!--        <script src="cordova.js"></script>-->
     </head>
     <body> 
         <!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
         <div data-role="page" id="accueil" data-theme="c" data-title="Accueil">           
-            <!--                 Start Nav Structure 
-                            <div class="cn-button" id="cn-button"><p class="libellemenu">Menu</p></div>
-                            <div class="cn-wrapper" id="cn-wrapper">
-                                <ul>
-                                    <li><a href="#agenda"><span class="icon-calendrier"></span></a></li>
-                                    <li><a href="#avoir"><span>A voir</span></a></li>
-                                    <li><a href="#actus"><span>Actus</span></a></li>
-                                    <li><a href="#pratique"><span>Pratique</span></a></li>
-                                    <li><a href="#infostravaux"><span>InfoTravo</span></a></li>
-                                    <li><a href="#signalement"><span>Signaler</span></a></li>
-                                    <li><a href="https://fr-fr.facebook.com/VilleDeSixFoursLesPlages"><span>facebook</span></a></li>
-                                </ul>
-                            </div>
-                             End of Nav Structure -->
 
+            <ul class="form">
+                <li><a class="facebook" href="https://fr-fr.facebook.com/VilleDeSixFoursLesPlages"><i class="fa fa-facebook-square"></i></a></li>         
+                <li><a class="siteweb" href="http://www.ville-six-fours.fr/"><i class="fa fa-globe"></i></a></li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+                    $('ul.form li a').click(
+                            function (e) {
+                                e.preventDefault(); // prevent the default action
+                                e.stopPropagation; // stop the click from bubbling
+                                $(this).closest('ul').find('.selected').removeClass('selected');
+                                $(this).parent().addClass('selected');
+                            });
+                });
+            </script>
             <div data-role="footer" data-theme="b">
                 <div class="container-fluid" >
                     <div class="col-xs-12">
                         <div class="col-xs-4">
-                            <a href="Agenda.html"  class="ui-btn menu ui-icon-calendrier ui-btn-icon-left" data-transition="slide">Agenda</a>
+                            <a href="#Agenda"  class="ui-btn menu ui-icon-calendrier ui-btn-icon-left" data-transition="slide">Agenda</a>
                         </div>
                         <div class="col-xs-4">
-                            <a href="Avoir.html" class="ui-btn menu ui-icon-avoir ui-btn-icon-left" data-transition="slide">A voir</a>
+                            <a href="#Avoir" class="ui-btn menu ui-icon-avoir ui-btn-icon-left" data-transition="slide">A voir</a>
                         </div>
                         <div class="col-xs-4">
-                            <a href="Actus.html" class="ui-btn menu ui-icon-actus ui-btn-icon-left" data-transition="slide">Actus</a>
+                            <a href="#Actus" class="ui-btn menu ui-icon-actus ui-btn-icon-left" data-transition="slide">Actus</a>
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="col-xs-4">
-                            <a href="Pratique.html" class="ui-btn menu ui-icon-pratique ui-btn-icon-left" data-transition="slide">Pratique</a>
+                            <a href="#Pratique" class="ui-btn menu ui-icon-pratique ui-btn-icon-left" data-transition="slide">Pratique</a>
                         </div>
                         <div class="col-xs-4">
-                            <a href="infostravaux.html" class="ui-btn menu ui-icon-info ui-btn-icon-left" data-transition="slide">Infotravo</a>
+                            <a href="#infostravaux" class="ui-btn menu ui-icon-info ui-btn-icon-left" data-transition="slide">Infotravo</a>
                         </div>
                         <div class="col-xs-4"> 
                             <a href="signaler.html" class="ui-btn menu ui-icon-signaler ui-btn-icon-left" data-transition="flip">Signaler</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!--                <script src="js/polyfills.js"></script>
+                        <script src="js/demo1.js"></script>-->
+        <!-- - - - - - - - -FIN PAGE D'ACCUEIL- - - - - - - - - -->
+        <!-- - - - - - - - - -PAGE AGENDA- - - - - - - - -->
+        <div data-role="page" id="Agenda" data-title="Agenda" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Agenda</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-role="button" data-rel="dialog" data-transition="pop"  class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="container-fluid">
+
+                    <ul id="listeFluxRSSAgenda" data-filter="true" data-role="listview" data-autodividers="true" data-inset="true" data-theme="b" >
+
+                    </ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Agenda" data-icon="calendrier" class="ui-btn-active ui-state-persist">Agenda</a></li>
+                        <li><a href="#Avoir" data-icon="avoir" data-transition="turn">A voir</a></li>
+                        <li><a href="#Actus" data-icon="actus" data-transition="none">Actus</a></li>
+                        <li><a href="#Pratique" data-icon="pratique" data-transition="slide">Pratique</a></li>
+                        <li><a href="#infostravaux" data-icon="info" data-transition="slide">Infotravo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="PageContenuFluxAgenda" data-theme="d" data-title="Agenda">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Agenda</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="flip" data-rel="dialog" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="content" id="contenuRSSAgenda">
+            </div>
+        </div>
+        <!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
+        <!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
+        <div data-role="page" id="Avoir" data-title="A voir">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>A voir</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Agenda" data-icon="calendrier" data-transition="slide" data-direction="reverse">Agenda</a></li>
+                        <li><a href="#Avoir" data-icon="avoir" class="ui-btn-active ui-state-persist">A voir</a></li>
+                        <li><a href="#Actus" data-icon="actus" data-transition="flow">Actus</a></li>
+                        <li><a href="#Pratique" data-icon="pratique" data-transition="slide">Pratique</a></li>
+                        <li><a href="#infostravaux" data-icon="info" data-transition="flip">Infotravo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- - - - - - - - - -FIN PAGE A VOIR- - - - - - - - -->
+        <!-- - - - - - - - - -PAGE ACTUS - - - - - - - - -->
+        <div data-role="page" id="Actus" data-title="Actus" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Actus</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" >               
+                <div id="elementFluxRSS" data-role="listview" >
+
+                </div>              
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Agenda" data-icon="calendrier" data-transition="none" data-direction="reverse">Agenda</a></li>
+                        <li><a href="#Avoir" data-icon="avoir" data-transition="slide" data-direction="reverse">A voir</a></li>
+                        <li><a href="#Actus" data-icon="actus"  class="ui-btn-active ui-state-persist">Actus</a></li>
+                        <li><a href="#Pratique" data-icon="pratique" data-transition="pop">Pratique</a></li>
+                        <li><a href="#infostravaux" data-icon="info" data-transition="turn">Infotravo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="PageContenuFluxActus" data-theme="d" data-title="Actus">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Actus</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="content" id="contenuRSSActus">
+            </div>
+        </div>
+        <!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
+        <!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
+        <div data-role="page" id="Pratique" data-title="Pratique">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Pratique</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+
+            </div>
+            <div data-role="main" id="content" class="ui-content">
+
+                <div data-role="panel" id="map" data-display="overlay" data-position="right" data-position-fixed="true">
+                    Une map 
+                </div>
+                <div data-role="tabs">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#services" class="ui-btn-active ui-state-persist">Services</a></li>
+                            <li><a href="#urgences">Urgences</a></li>
+                        </ul>
+                    </div>
+                    <div id="services">
+                        <input id="unfiltre" data-type="search" placeholder="Que cherchez-vous ?">
+                        <a href="#map" class="ui-btn ui-btn-inline">Open Panel</a>
+
+                    </div>
+                    <div id="urgences">
+
                     </div>
                 </div>
             </div>
-<!--                <script src="js/polyfills.js"></script>
-                <script src="js/demo1.js"></script>-->
-                <!-- - - - - - - - -FIN PAGE D'ACCUEIL- - - - - - - - - -->
-                <!-- - - - - - - - - -PAGE AGENDA- - - - - - - - -->
-                
-                <!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
-                <!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
-                
-                <!-- - - - - - - - - -FIN PAGE A VOIR- - - - - - - - -->
-                <!-- - - - - - - - - -PAGE ACTUS - - - - - - - - -->
-                
-                <!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
-                <!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
-                
-                <!-- - - - - - - - - - -FIN PAGE PRATIQUE- - - - - - - - -->
-                <!-- - - - - - - - - - -PAGE INFOSTRAVAUX- - - - - - - - - -->
-                
-                <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
-                
-                </body>
-                </html>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Agenda" data-transition="slideup" data-direction="reverse" data-icon="calendrier">Agenda</a></li>
+                        <li><a href="#Avoir" data-transition="slidedown" data-direction="reverse" data-icon="avoir">A voir</a></li>
+                        <li><a href="#Actus" data-transition="slidefade" data-direction="reverse" data-icon="actus">Actus</a></li>
+                        <li><a href="#Pratique" data-icon="pratique"  data-transition="slide" class="ui-btn-active ui-state-persist">Pratique</a></li>
+                        <li><a href="#infostravaux" data-icon="info" data-transition="slide">Infotravo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- - - - - - - - - - -FIN PAGE PRATIQUE- - - - - - - - -->
+        <!-- - - - - - - - - - -PAGE INFOSTRAVAUX- - - - - - - - - -->
+        <div data-role="page" id="infostravaux" data-title="Travaux">
+
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>Infos Travaux</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="signaler.html" data-transition="pop" data-rel="dialog" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Agenda" data-transition="slide" data-direction="reverse" data-icon="calendrier">Agenda</a></li>
+                        <li><a href="#Avoir" data-transition="slide" data-direction="reverse" data-icon="avoir">A voir</a></li>
+                        <li><a href="#Actus" data-transition="slide" data-direction="reverse" data-icon="actus">Actus</a></li>
+                        <li><a href="#Pratique" data-transition="slide" data-direction="reverse" data-icon="pratique">Pratique</a></li>
+                        <li><a href="#infostravaux" data-transition="slide" class="ui-btn-active ui-state-persist" data-icon="info">Infotravo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
+        <script type="text/javascript" src="js/lecteurRSS.js"></script>
+    </body>
+</html>
