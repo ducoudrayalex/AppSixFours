@@ -1,8 +1,7 @@
-
 h1{
     font-weight: bold;
-
 }
+
 .col-xs-6{
     padding-right:5px;
     padding-left:5px;
@@ -15,14 +14,16 @@ h5{
     font-family: 'Times New Roman',Georgia,sans-serif;
 }
 .jumbotron p{
-    font-size:15px;
+    font-size:10px;
     font-family: 'Times New Roman',Georgia,sans-serif;
+    color:black;
 }
 
 .jumbotron{
     padding:3px 3px 3px 3px;
     box-shadow:#059 3px 3px 3px;
     height:100%;
+      
 }
 .well{
     
@@ -30,14 +31,20 @@ h5{
 h4{
     color:#000;
 }
-#contenuRSSActus,#contenuRSSAgenda{
+#contenuRSSAgenda,#contenuRSSActus{
     background-color:orange;
+    height:100%;
+    margin-bottom:0px;
+}
 
+.ui-content{
+    height:700px;
 }
 .ui-footer{
     position:fixed;
     bottom: 0px;
     width:100%;
+    
 }
 .ui-header{
     width:100%;
@@ -66,6 +73,7 @@ h4{
 }
 .ui-page-theme-d{
     background-color:orange;
+    height:100%
 }
 
 .img{

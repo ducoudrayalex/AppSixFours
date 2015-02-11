@@ -87,42 +87,14 @@
                 </div>
             </div>
             <div data-role="main" class="ui-content">
-                <div class="container">
+                <div class="container-fluid">
 
-                    <div class="row">
-                        <form method="post" action="">
-                            <fieldset class="ui-field-contain">
-                                <label for="date">Option de filtre:</label>
-                                <select name="filtredate" id="date">
-                                    <optgroup label="date">
-                                        <option value="jour">Jour</option>
-                                        <option value="semaine">Semaine</option>
-                                        <option value="mois">Mois</option>
-                                    </optgroup>
-                                    <optgroup label="theme">
-                                        <option value="sport">Sport</option>
-                                        <option value="animation">Animation</option>
-                                        <option value="Concert">Concert</option>
-                                        <option value="Spectacle">Spectacle</option>     
-                                    </optgroup>
-                                </select>
-                            </fieldset>
-                            <input type="submit" data-inline="true" value="Submit">
-                        </form>        
-                    </div>
+                    <ul id="listeFluxRSSAgenda" data-filter="true" data-role="listview" data-autodividers="true" data-inset="true" data-theme="b" >
 
-                    <!-- <ul id="listeFluxRSSAgenda" data-role="listview" data-inset="true" data-theme="b" >
-                    
-                        </ul>-->
-                    <div class="container-fluid " >
-                        <div id="listeFluxRSSAgenda" data-role="listview" data-inset="true" data-theme="b"  >
-
-                        </div>
-                    </div>
+                    </ul>
                 </div>
-
             </div>
-            <div data-role="footer" data-theme="b">
+            <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#Agenda" data-icon="calendrier" class="ui-btn-active ui-state-persist">Agenda</a></li>
@@ -135,7 +107,7 @@
             </div>
         </div>
 
-        <div data-role="page" id="PageContenuFluxAgenda" data-title="Agenda">
+        <div data-role="page" id="PageContenuFluxAgenda" data-theme="d" data-title="Agenda">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Agenda</h1>
@@ -146,7 +118,6 @@
             </div>
             <div data-role="content" id="contenuRSSAgenda">
             </div>
-
         </div>
         <!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
         <!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
@@ -162,7 +133,7 @@
             <div data-role="main" class="ui-content">
 
             </div>
-            <div data-role="footer" data-theme="b">
+            <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#Agenda" data-icon="calendrier" data-transition="slide" data-direction="reverse">Agenda</a></li>
@@ -186,11 +157,11 @@
                 </div>
             </div>
             <div data-role="main" class="ui-content" >               
-                <div id="elementFluxRSS" >
+                <div id="elementFluxRSS" data-role="listview" >
 
                 </div>              
             </div>
-            <div data-role="footer" data-theme="b">
+            <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#Agenda" data-icon="calendrier" data-transition="none" data-direction="reverse">Agenda</a></li>
@@ -202,7 +173,7 @@
                 </div>
             </div>
         </div>
-        <div data-role="page" id="PageContenuFluxActus" data-title="Actus">
+        <div data-role="page" id="PageContenuFluxActus" data-theme="d" data-title="Actus">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Actus</h1>
@@ -248,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            <div data-role="footer" data-theme="b">
+            <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#Agenda" data-transition="slideup" data-direction="reverse" data-icon="calendrier">Agenda</a></li>
@@ -276,7 +247,7 @@
 
             </div>
 
-            <div data-role="footer" data-theme="b">
+            <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#Agenda" data-transition="slide" data-direction="reverse" data-icon="calendrier">Agenda</a></li>
