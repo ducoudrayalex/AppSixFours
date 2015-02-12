@@ -64,7 +64,9 @@ h4{
 #menu{
     opacity:0.4;
 }
-
+#elementFluxRSS{
+    margin-top:5px;
+}
 .ui-page-theme-c{
     background-image: url('../img/fondappli2.jpg');
     height:100%;

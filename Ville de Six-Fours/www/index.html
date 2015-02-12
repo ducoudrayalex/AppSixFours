@@ -28,6 +28,7 @@
         <!--        <script src="cordova.js"></script>-->
     </head>
     <body> 
+        
         <!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
         <div data-role="page" id="accueil" data-theme="c" data-title="Accueil">           
 
@@ -188,6 +189,10 @@
         <!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
         <!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
         <div data-role="page" id="Pratique" data-title="Pratique">
+            <div data-role="panel" data-display="overlay" data-close-btn="right" id="panelpratique">
+                <a href="#Pratique" data-rel="close">Fermer</a>
+                <div class="container"></div>
+            </div>
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Pratique</h1>
@@ -210,12 +215,14 @@
                         </ul>
                     </div>
                     <div id="services">
-                        <input id="unfiltre" data-type="search" placeholder="Que cherchez-vous ?">
-                        <a href="#map" class="ui-btn ui-btn-inline">Open Panel</a>
+                        <ul data-role="listview" data-filter="true" id="listServices" data-autodividers="true" data-inset="true" data-theme="a">
 
+                        </ul>
                     </div>
                     <div id="urgences">
-
+                        <ul data-role="listview" data-filter="true" id="listUrgences" data-autodividers="true" data-inset="true" data-theme="a">
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -261,5 +268,6 @@
         </div>
         <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
         <script type="text/javascript" src="js/lecteurRSS.js"></script>
+        <script type="text/javascript" src="js/Pratique.js"></script>
     </body>
 </html>

@@ -13,8 +13,9 @@ function AjaxArticle() {
                 var elementRSS = {
                     image: $(valeur).find('url').text(),
                     titre: $(valeur).find('title').text(),
-                    description: $(valeur).find('description').text(),
-                    content:$(valeur).find('content').text()
+                    //description: $(valeur).find('description').text(),
+                    desc:$(valeur).find('desc').text(),
+                    content: $(valeur).find('content').text()
                 };
                 stockFluxRSS.push(elementRSS);
             });
@@ -26,19 +27,19 @@ function AjaxArticle() {
 //                </a></li>';
 //            });
             var i = stockFluxRSS.length;
-alert(i);
+
             $.each(stockFluxRSS, function (id, valeur) {
                 if (i % 2 === 0) {
                     retourHtml += '<div class="row"><div class="col-xs-12"><div class="col-xs-6"><div class="jumbotron">\
                     <a id="' + id + '" class="liencontenuactus"><h5>' + valeur.titre + '</h5>\
                     <img src="' + valeur.image + '" alt="image" class="img-responsive">\
-                    <p>' + valeur.description + '...</p></a></div></div>';
+                    <p>' + valeur.desc + '...</p></a></div></div>';
 
                 } else {
                     retourHtml += '<div class="col-xs-6 "><div class="jumbotron">\
                     <a id="' + id + '" class="liencontenuactus"><h5>' + valeur.titre + '</h5>\
                     <img src="' + valeur.image + '" alt="image" class="img-responsive">\
-                    <p>' + valeur.description + '...</p></a></div></div></div></div>';
+                    <p>' + valeur.desc + '...</p></a></div></div></div></div>';
                 }
                 i++;
             });
@@ -89,7 +90,7 @@ function AjaxListview(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencont
                 retourHtml += '<li date="' + valeur.dtevent + '" >\
                 <a id ="' + id + '"  class="' + liencontenu + '">\
                 <img src="' + valeur.image + '" class="img-responsive" alt="image"><p><h1 class="titre">' + valeur.titre + '</h1></p>\
-                <small>' + valeur.description.substr(0,20) + '...</small>\
+                <small>' + valeur.description.substr(0, 20) + '...</small>\
                 </a></li>';
             });
 

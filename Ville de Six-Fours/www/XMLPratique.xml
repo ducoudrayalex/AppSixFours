@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <item category="Sante">
+        <service>
+            <nom>CPAM</nom>
+            <tel>3646</tel> 
+        </service>
+        
+    </item>
+    <item category="Urgence">
+        <service>
+            <nom>Police</nom>
+            <tel>17</tel>  
+        </service>
+        <service>
+            <nom>Pompier</nom>
+            <tel>18</tel>  
+        </service>
+        <service>
+            <nom>Samu</nom>
+            <tel>15</tel>  
+        </service>
+    </item>
+    <item category="Assistance">
+        <service>
+            <nom>Violence conjugale</nom>
+            <tel>3919</tel>   
+        </service>        
+    </item>
+    <item category="Emploi">
+        <service>
+            <nom>Pôle emploi</nom>
+            <tel>3949</tel>  
+        </service>       
+    </item>
+    <item category="Administration">
+        <service>
+            <nom>Mairie</nom>
+            <tel>+33494349300</tel>  
+        </service>        
+        <service>
+            <nom>Allo service</nom>
+            <tel>3939</tel>  
+        </service>        
+    </item>
+</root>
