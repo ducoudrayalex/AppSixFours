@@ -21,7 +21,7 @@ $(document).on('pageinit', function () {
                 });
             });
             $.each(stockElementXML, function (id, valeur) {
-                if (valeur.category === "urgence") {
+                if (valeur.category === "Urgence") {
                     retourHtmlUrgence += '<li category="' + valeur.category + '" >\
                 <a id ="' + id + '"  class="lienpanel">\
                 <p><h4 class="nom">' + valeur.nom + '</h4></p>\
@@ -47,10 +47,12 @@ $(document).on('pageinit', function () {
             $('.lienpanel').click(function () {
                 var id = parseInt($(this).attr('id'));
                 $('#panelpratique').panel('open');
-                $('#panelpratique').html('<h3 style="text-align:center;font-weight:bold;">'+stockElementXML[id].nom+'</h3><br>\
-                <a href="tel:'+stockElementXML[id].tel+'">Cliquez pour appeler le : '+stockElementXML[id].tel+'</a>');
-            });
+                $('#panelpratique').html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
+                <a href="tel:' + stockElementXML[id].tel + '">Appeler le ' + stockElementXML[id].tel + '</a>');
+               
             
+            });
+
         },
         error: function (status) {
             console.log(status);

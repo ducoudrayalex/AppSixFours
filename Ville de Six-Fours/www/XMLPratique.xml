@@ -3,7 +3,7 @@
     <item category="Sante">
         <service>
             <nom>CPAM</nom>
-            <tel>3646</tel> 
+            <tel>+323646</tel> 
         </service>
         
     </item>
@@ -36,7 +36,7 @@
     <item category="Administration">
         <service>
             <nom>Mairie</nom>
-            <tel>+33494349300</tel>  
+            <tel>04 94 34 93 00</tel>  
         </service>        
         <service>
             <nom>Allo service</nom>
