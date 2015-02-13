@@ -39,6 +39,14 @@
                         {
                             "xml": "<feature name=\"Geocoder\"><param name=\"android-package\" value=\"plugin.google.maps.MyGeocoder\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Accelerometer\"><param name=\"android-package\" value=\"org.apache.cordova.devicemotion.AccelListener\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Compass\"><param name=\"android-package\" value=\"org.apache.cordova.deviceorientation.CompassListener\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -52,11 +60,11 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "/manifest": [
@@ -118,6 +126,12 @@
         },
         "plugin.google.maps": {
             "API_KEY_FOR_ANDROID": "AIzaSyDL4oTZD2fNYvEC1ePIGnfq4gz8Y8gxIKY",
+            "PACKAGE_NAME": "com.phonegap.sixfours"
+        },
+        "org.apache.cordova.device-motion": {
+            "PACKAGE_NAME": "com.phonegap.sixfours"
+        },
+        "org.apache.cordova.device-orientation": {
             "PACKAGE_NAME": "com.phonegap.sixfours"
         }
     },

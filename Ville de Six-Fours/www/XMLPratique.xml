@@ -43,10 +43,13 @@
             <tel>04 94 34 93 00</tel>  
             <lat>43.093173</lat>
             <long>5.839327</long>
+            <adresse>2 Place 18 Juin 1940, 83140 Six-Fours-les-Plages</adresse>
+            <contenu>Nos bureaux sont ouverts du lundi au vendredi de 8h30 à 16h30
+et le samedi matin de 8h30 à 11h.</contenu>
         </service>        
         <service>
             <nom>Allo service</nom>
             <tel>3939</tel>  
-        </service>        
+        </service>       
     </item>
 </root>

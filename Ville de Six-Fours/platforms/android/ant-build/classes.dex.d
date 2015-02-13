@@ -10,6 +10,10 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\devicemotion\AccelListener$1.class \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\devicemotion\AccelListener.class \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\deviceorientation\CompassListener$1.class \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\deviceorientation\CompassListener.class \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1.class \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$1.class \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$2$2.class \

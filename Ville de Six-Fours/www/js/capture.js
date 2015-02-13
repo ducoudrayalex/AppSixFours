@@ -1,58 +1,65 @@
-$("document").bind("pageinit",function () {
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value
-$('#getPhoto').on('click',capturePhoto);
-    document.addEventListener("deviceready", onDeviceReady, false);
+var pictureSource;
+var destinationType;
 
-    function onDeviceReady() {
-        pictureSource = navigator.camera.PictureSourceType;
-        destinationType = navigator.camera.DestinationType;
-    }
-    
+function updateCameraStatus(status) {
+    $("#cameraStatus").html(status);
+}
 
-    function clearCache() {
-        navigator.camera.cleanup();
-    }
+function photoOnFail(message) {
+    updateCameraStatus("ERROR: " + message);
+}
 
-    var retries = 0;
-    function onCapturePhoto(fileURI) {
-        var win = function (r) {
-            clearCache();
-            retries = 0;
-            alert('Done!');
-        };
+function onPhotoDataSuccess(imageData) {
+    $("#popImage").attr("src", "data:image/jpeg;base64," + imageData);
+    $("#popupPhoto").popup("open");
+}
 
-        var fail = function (error) {
-            if (retries == 0) {
-                retries++;
-                setTimeout(function () {
-                    onCapturePhoto(fileURI);
-                }, 1000);
-            } else {
-                retries = 0;
-                clearCache();
-                alert('Ups. Something wrong happens!');
-            }
-        };
+function onPhotoURISuccess(imageURI) {
+    $("#popImage").attr("src", imageURI);
+    //$("#pictBox").empty();
+    //$("#pictBox").append(imageURI).trigger("create");
+    $("#pictBox").html(imageURI);
+    updateCameraStatus("SUCCESS: Image loaded");
+    $("#popupPhoto").popup("open");
+}
 
-        var options = new FileUploadOptions();
-        options.fileKey = "file";
-        options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
-        options.mimeType = "image/jpeg";
-        options.params = {}; // if we need to send parameters to the server request
-        var ft = new FileTransfer();
-        ft.upload(fileURI, encodeURI("http://host/upload"), win, fail, options);
-    }
+function capturePhoto() {
+    navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, {quality: 50, destinationType: destinationType.FILE_URI});
+}
 
-    function capturePhoto() {
-        navigator.camera.getPicture(onCapturePhoto, onFail, {
-            quality: 100,
-            destinationType: destinationType.FILE_URI
-        });
-    }
+//Android ignores the allowEdit parameter
+function capturePhotoEdit() {
+    navigator.camera.getPicture(onPhotoDataSuccess, photoOnFail, {quality: 20, allowEdit: true, destinationType: destinationType.DATA_URL});
+}
 
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
-    
+//source could be Camera.PictureSourceType.PHOTOLIBRARY and SAVEDPHOTOALBUM, in Android, they are the same.
+function getPhoto(source) {
+    updateCameraStatus("");
+    navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, {quality: 50, destinationType: destinationType.FILE_URI, sourceType: source});
+}
+
+function getCameraReady() {
+    $("#popupPhoto").popup("close");
+    updateCameraStatus("");
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+
+    $('#capture').on('click', function (e) {
+        e.preventDefault();
+        capturePhoto();
+        return false;
+    });
+
+    $('#importGalerie').on('click', function (e) {
+        e.preventDefault();
+        getPhoto(pictureSource.PHOTOLIBRARY);
+        return false;
+    });
+}
+
+//*********************************************************    
+// initialize the environment
+//********************************************************* 
+$("#signaler").bind("pagebeforeshow", function () {
+    getCameraReady();
 });

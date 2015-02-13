@@ -15,25 +15,19 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">    
-        <!--    <link rel="stylesheet" href="css/normalize.css">
-                        <link rel="stylesheet" href="css/demo.css">
-                        <link rel="stylesheet" href="css/component1.css">-->
-        <!-- Include the jQuery library -->
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
-<!--        <script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script>-->
+        <!--        <script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script>-->
         <!--        <script src="js/modernizr-2.6.2.min.js"></script>-->
 
         <!--        <script type="text/javascript" src="js/capture.js"></script>-->
-        <!--        <script src="cordova.js"></script>-->
-        <script type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU">
-        </script>
+<!--        <script src="cordova.js"></script>-->
+
     </head>
     <body> 
-
+        
         <!-- - - - - - - - -PAGE D'ACCUEIL- - - - - - - - -->
         <div data-role="page" id="accueil" data-theme="c" data-title="Accueil">           
 
@@ -41,7 +35,7 @@
                 <li><a class="facebook" href="https://fr-fr.facebook.com/VilleDeSixFoursLesPlages"><i class="fa fa-facebook-square"></i></a></li>         
                 <li><a class="siteweb" href="http://www.ville-six-fours.fr/"><i class="fa fa-globe"></i></a></li>
             </ul>
-            <script>
+<!--            <script>
                 $(document).ready(function () {
                     $('ul.form li a').click(
                             function (e) {
@@ -50,7 +44,7 @@
                                 $(this).closest('ul').find('.selected').removeClass('selected');
                                 $(this).parent().addClass('selected');
                             });
-                });</script>
+                });</script>-->
             <div data-role="footer" data-theme="b">
                 <div class="container-fluid" >
                     <div class="col-xs-12">
@@ -215,7 +209,7 @@
                         </ul>
                     </div>
                     <div id="urgences">
-                        <ul data-role="listview" data-filter="true" id="listUrgences" data-autodividers="true" data-inset="true" data-theme="a">
+                        <ul data-role="listview" data-filter="true" id="listUrgences" data-inset="true" data-theme="a">
 
                         </ul>
                     </div>
@@ -243,8 +237,12 @@
                 </div>
             </div>
             <div data-role="content" id="contenuPratique">
-                <div style="width:100%;height:200px;" id="map_canvas">
+                
+                <div style="width:100%;height:350px;" id="map_canvas">
 
+                </div>
+                <div id="infoPratique">
+                    
                 </div>
             </div>
         </div>
@@ -279,5 +277,6 @@
         <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
         <script type="text/javascript" src="js/lecteurRSS.js"></script>
         <script type="text/javascript" src="js/Pratique.js"></script>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></script>
     </body>
 </html>

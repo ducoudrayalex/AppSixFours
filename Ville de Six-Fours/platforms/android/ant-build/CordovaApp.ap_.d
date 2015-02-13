@@ -229,6 +229,8 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\polyfills.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\Pratique.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-motion \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-orientation \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer \
@@ -239,6 +241,13 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-motion\www \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-motion\www\Acceleration.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-motion\www\accelerometer.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-orientation\www \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-orientation\www\compass.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-orientation\www\CompassError.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.device-orientation\www\CompassHeading.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\android \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\notification.js \

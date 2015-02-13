@@ -16,7 +16,9 @@ $(document).on('pageinit', function () {
                         tel: $(this).find('tel').text(),
                         category: categorie,
                         lat: $(this).find('lat').text(),
-                        long: $(this).find('long').text()
+                        long: $(this).find('long').text(),
+                        adresse: $(this).find('adresse').text(),
+                        contenu: $(this).find('contenu').text()
                     };
                     console.log(elementXML);
                     stockElementXML.push(elementXML);
@@ -24,7 +26,7 @@ $(document).on('pageinit', function () {
             });
             $.each(stockElementXML, function (id, valeur) {
                 if (valeur.category === "Urgence") {
-                    retourHtmlUrgence += '<li category="' + valeur.category + '" >\
+                    retourHtmlUrgence += '<li class="' + valeur.category + '" >\
                 <a id ="' + id + '"  class="liencontenuPratique">\
                 <p><h4 class="nom">' + valeur.nom + '</h4></p>\
                 </a></li>';
@@ -46,10 +48,9 @@ $(document).on('pageinit', function () {
                 }
             }).listview('refresh');
             $('#listUrgences').listview({
-                autodividers: true,
                 filterPlaceholder: "Que cherchez-vous ? ",
                 autodividersSelector: function (li) {
-                    var out = li.attr('category');
+                    var out = li.attr('class');
                     return out;
                 }
             }).listview('refresh');
@@ -58,24 +59,38 @@ $(document).on('pageinit', function () {
                 $.mobile.changePage("#PageContenuPratique", {
                     transition: "slide"
                 });
-                //var positionService = new google.maps.LatLng(stockElementXML[id].lat, stockElementXML[id].long);
-                //console.log(positionService);
-//                $('#PageContenuPratique').on("pageshow", function () {
-////                    $('#map_canvas').gmap({'center': '43.1, 5.85', 'zoom': 8});
-////                    $('#map_canvas').gmap('addMarker', {'position': positionService}).click(function () {
-////                        $(this).gmap('openInfoWindow', {'content': stockElementXML[id].nom}, this);
-//                    
-//                });
-                
-//                $('#PageContenuPratique').on("pageshow", function () {
-//                    $('#map_canvas').gmap('refresh');
-//                });
+                var positionService = new google.maps.LatLng(stockElementXML[id].lat, stockElementXML[id].long);
+                var map;
+                var markerService;
+                $('#PageContenuPratique').on("pageshow", function () {
+                    var mapOptions = {
+                        zoom: 14,
+                        center: positionService
+                    };
+                    map = new google.maps.Map($('#map_canvas')[0], mapOptions);
+                    markerService = new google.maps.Marker({
+                        position: positionService,
+                        map: map,
+                        title: '<h4>' + stockElementXML[id].nom + '</h4>\n\
+                        <p>'+stockElementXML[id].adresse+'</p>'
+                    });
+                    MaPosition(map);
 
-                //console.log(stockFluxRSS[id].description);
-                $("#contenuPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
-                <a href="tel:' + stockElementXML[id].tel + '">Appeler le ' + stockElementXML[id].tel + '</a>');
+                    var infowindowService = new google.maps.InfoWindow({
+                        content: '<h4>' + stockElementXML[id].nom + '</h4>\n\
+                        <p>' + stockElementXML[id].adresse + '</p>',
+                        position: positionService
+                    });
+                    google.maps.event.addListener(markerService, 'click', function () {
+                        infowindowService.open(map, markerService);
+                    });
+
+                    $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
+                <a href="tel:' + stockElementXML[id].tel + '">Appeler le ' + stockElementXML[id].tel + '</a>\n\
+                <p>' + stockElementXML[id].contenu + '</p>');
+                }
+                );
             });
-
         },
         error: function (status) {
             console.log(status);
@@ -83,4 +98,33 @@ $(document).on('pageinit', function () {
     });
 });
 
-
+function MaPosition(map) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            var markerPosition = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: '<h4>Votre position</h4>'
+            });
+            var infowindowPosition = new google.maps.InfoWindow({
+                content: 'Votre position',
+                position: pos
+            });
+            google.maps.event.addListener(markerPosition, 'click', function () {
+                infowindowPosition.open(map, markerPosition);
+            });
+        }, function () {
+            handleNoGeolocation(true);
+        });
+    } else {
+        handleNoGeolocation(false);
+    }
+    function handleNoGeolocation(errorFlag) {
+        if (errorFlag) {
+            alert('Erreur: Le service de geolocation a échoué.');
+        } else {
+            alert('Erreur: Votre navigateur ne supporte pas le service de géolocation');
+        }
+    }
+}

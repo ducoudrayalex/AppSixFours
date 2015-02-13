@@ -26,6 +26,12 @@
     <feature name="Geocoder">
         <param name="android-package" value="plugin.google.maps.MyGeocoder" />
     </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+    </feature>
+    <feature name="Compass">
+        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+    </feature>
     <name>Ville de Six-Fours</name>
     <description>Hello World sample application that responds to the deviceready event.</description>
     <author email="support@phonegap.com" href="http://phonegap.com">PhoneGap Team</author>
