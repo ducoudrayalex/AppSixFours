@@ -11,6 +11,7 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\drawable-port-xhdpi\screen.png \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\drawable-xxhdpi\icon.png \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\values\strings.xml \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\values\version.xml \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\xml\config.xml \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\res\drawable\icon.png \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\res\drawable-hdpi\icon.png \
@@ -222,6 +223,7 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery-2.1.3.min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.mobile-1.4.5.min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.mobile-1.4.5.min.map \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.ui.map.full.min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\lecteurRSS.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\modernizr-2.6.2.min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\polyfills.js \
@@ -230,6 +232,8 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\plugin.google.maps \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\plugin.http.request \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \
@@ -265,6 +269,10 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer\www \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer\www\FileTransfer.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer\www\FileTransferError.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\plugin.google.maps\www \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\plugin.google.maps\www\googlemaps-cdv-plugin.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\plugin.http.request\www \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\plugins\plugin.http.request\www\http-request.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\res\icon \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\res\screen \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\res\icon\android \

@@ -23,6 +23,22 @@
                         {
                             "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"HttpRequest\"><param name=\"android-package\" value=\"plugin.http.request.HttpRequest\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GoogleMaps\"><param name=\"android-package\" value=\"plugin.google.maps.GoogleMaps\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"External\"><param name=\"android-package\" value=\"plugin.google.maps.External\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geocoder\"><param name=\"android-package\" value=\"plugin.google.maps.MyGeocoder\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -42,6 +58,46 @@
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
                             "count": 1
                         }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.google.android.providers.gsf.permission.READ_GSERVICES\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:glEsVersion=\"0x00020000\" android:required=\"true\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.maps.v2.API_KEY\" android:value=\"AIzaSyDL4oTZD2fNYvEC1ePIGnfq4gz8Y8gxIKY\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -59,10 +115,23 @@
         },
         "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.phonegap.sixfours"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyDL4oTZD2fNYvEC1ePIGnfq4gz8Y8gxIKY",
+            "PACKAGE_NAME": "com.phonegap.sixfours"
         }
     },
     "dependent_plugins": {
         "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.phonegap.sixfours"
+        },
+        "plugin.http.request": {
+            "PACKAGE_NAME": "com.phonegap.sixfours"
+        },
+        "com.google.playservices": {
+            "PACKAGE_NAME": "com.phonegap.sixfours"
+        },
+        "android.support.v4": {
             "PACKAGE_NAME": "com.phonegap.sixfours"
         }
     }

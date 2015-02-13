@@ -10,11 +10,15 @@
     <item category="Urgence">
         <service>
             <nom>Police</nom>
-            <tel>17</tel>  
+            <tel>17</tel>
+            <lat>43.094139</lat>
+            <long>5.838518</long>  
         </service>
         <service>
             <nom>Pompier</nom>
             <tel>18</tel>  
+            <lat>43.099818</lat>
+            <long>5.817243</long>
         </service>
         <service>
             <nom>Samu</nom>
@@ -37,6 +41,8 @@
         <service>
             <nom>Mairie</nom>
             <tel>04 94 34 93 00</tel>  
+            <lat>43.093173</lat>
+            <long>5.839327</long>
         </service>        
         <service>
             <nom>Allo service</nom>
