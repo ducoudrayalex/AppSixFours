@@ -11,6 +11,7 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\drawable-port-xhdpi\screen.png \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\drawable-xxhdpi\icon.png \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\values\strings.xml \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\values\version.xml \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\res\xml\config.xml \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\res\drawable\icon.png \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\ant-build\res\drawable-hdpi\icon.png \

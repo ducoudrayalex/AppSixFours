@@ -1,4 +1,4 @@
-$(document).on('pageinit', function () {
+$(document).on('pageshow', function () {
     $.ajax({
         type: 'get',
         url: 'XMLPratique.xml',
