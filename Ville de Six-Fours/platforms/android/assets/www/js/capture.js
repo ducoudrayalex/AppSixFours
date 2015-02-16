@@ -1,58 +1,65 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log(navigator.camera);
-}
-var npath = '';
+var pictureSource;
+var destinationType;
 
-function sendform() {
-    var options = new FileUploadOptions();
-    options.fileKey = "file";
-    options.fileName = npath.substr(npath.lastIndexOf('/') + 1);
-    options.mimeType = "image/jpeg";
-
-    var nomimage = Math.floor(Math.random() * 15000000);
-    var ft = new FileTransfer();
-    ft.upload(npath, upload_url + '?nomimage=' + nomimage,
-            successCallback,
-            errorCallback,
-            options);
-}
-function successCallback(){
-    alert("Photo upload");
-}
-function errorCallback(){
-    alert("Photo upload");
-}
-function capturePhoto() {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50, targetWidth: 600});
+function updateCameraStatus(status) {
+    $("#cameraStatus").html(status);
 }
 
-function onFail() {
-    var msg = 'Impossible de lancer l\'appareil photo';
-    navigator.notification.alert(msg, null, '');
+function photoOnFail(message) {
+    updateCameraStatus("ERROR: " + message);
 }
 
 function onPhotoDataSuccess(imageData) {
-    // On r�cup�re le chemin de la photo
-    npath = imageData.replace("file://localhost", '');
-    var path = imageData.replace("file://localhost", '');
-
-    // On affiche la preview
-    $('#myImage').attr('src', path);
-    $('#myImage').show();
-
-    // On affiche le boutton de suppression
-    $('#button_deletePhoto').show();
+    $("#popImage").attr("src", "data:image/jpeg;base64," + imageData);
+    $("#popupPhoto").popup("open");
 }
 
-function deletePhoto() {
-    $('#myImage').attr('src', '');
-    $('#myImage').hide();
-    $('#button_deletePhoto').hide();
+function onPhotoURISuccess(imageURI) {
+    $("#popImage").attr("src", imageURI);
+    //$("#pictBox").empty();
+    //$("#pictBox").append(imageURI).trigger("create");
+    $("#pictBox").html(imageURI);
+    updateCameraStatus("SUCCESS: Image loaded");
+    $("#popupPhoto").popup("open");
 }
 
+function capturePhoto() {
+    navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, {quality: 50, destinationType: destinationType.FILE_URI});
+}
 
+//Android ignores the allowEdit parameter
+function capturePhotoEdit() {
+    navigator.camera.getPicture(onPhotoDataSuccess, photoOnFail, {quality: 20, allowEdit: true, destinationType: destinationType.DATA_URL});
+}
 
+//source could be Camera.PictureSourceType.PHOTOLIBRARY and SAVEDPHOTOALBUM, in Android, they are the same.
+function getPhoto(source) {
+    updateCameraStatus("");
+    navigator.camera.getPicture(onPhotoURISuccess, photoOnFail, {quality: 50, destinationType: destinationType.FILE_URI, sourceType: source});
+}
 
+function getCameraReady() {
+    $("#popupPhoto").popup("close");
+    updateCameraStatus("");
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
 
-	
+    $('#capture').on('click', function (e) {
+        e.preventDefault();
+        capturePhoto();
+        return false;
+    });
+
+    $('#importGalerie').on('click', function (e) {
+        e.preventDefault();
+        getPhoto(pictureSource.PHOTOLIBRARY);
+        return false;
+    });
+}
+
+//*********************************************************    
+// initialize the environment
+//********************************************************* 
+$("#signaler").bind("pagebeforeshow", function () {
+    getCameraReady();
+});
