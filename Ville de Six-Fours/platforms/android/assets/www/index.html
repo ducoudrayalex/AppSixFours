@@ -73,7 +73,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Agenda</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-role="button" data-rel="dialog" data-transition="pop"  class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-role="button" data-rel="dialog" data-transition="pop"  class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>A voir</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Actus</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Actus</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Pratique</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Pratique</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -260,7 +260,7 @@
             </div>
         </div>
         <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
-        <div data-role="dialog" id="signaler" data-close-btn="right" data-theme="a">
+        <div data-role="page" id="signaler" data-close-btn="right" data-theme="a">
             <div data-role="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
                 <h1 class="ui-title" role="heading" aria-level="1">Signaler un problème</h1>
             </div>
@@ -302,7 +302,7 @@
                         navigator.camera.getPicture(onPhotoURISuccess, onFail, {quality: 50,
                             destinationType: destinationType.FILE_URI,
                             sourceType: source});
-                        alert('ok getPhoto'),
+                        alert('ok getPhoto');
                     }
                     function onFail(message) {
                         alert('Failed because: ' + message);
