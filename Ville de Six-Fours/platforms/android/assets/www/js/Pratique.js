@@ -9,7 +9,6 @@ $(document).on('pageinit', function () {
             var retourHtmlUrgence = "";
             $(xml).find('item').each(function () {
                 var categorie = $(this).attr('category');
-
                 $(this).find('service').each(function (valeur) {
                     var elementXML = {
                         nom: $(this).find('nom').text(),
@@ -25,7 +24,7 @@ $(document).on('pageinit', function () {
                 });
             });
             $.each(stockElementXML, function (id, valeur) {
-                if (valeur.category === "Urgence") {
+                if (valeur.category === "Urgence") {//test si la valeur de l'attribut category du fichier xml est egal à Urgence
                     retourHtmlUrgence += '<li class="' + valeur.category + '" >\
                 <a id ="' + id + '"  class="liencontenuPratique">\
                 <p><h4 class="nom">' + valeur.nom + '</h4></p>\
@@ -37,6 +36,7 @@ $(document).on('pageinit', function () {
                 </a></li>';
                 }
             });
+            //on rempli les deux listes par deux chaines differentes(une par onglet
             $('#listServices').html(retourHtmlService);
             $('#listUrgences').html(retourHtmlUrgence);
             $('#listServices').listview({
@@ -59,32 +59,33 @@ $(document).on('pageinit', function () {
                 $.mobile.changePage("#PageContenuPratique", {
                     transition: "slide"
                 });
+                //Api google map https://developers.google.com/maps/documentation/javascript/tutorial?hl=fr
                 var positionService = new google.maps.LatLng(stockElementXML[id].lat, stockElementXML[id].long);
                 var map;
                 var markerService;
                 $('#PageContenuPratique').on("pageshow", function () {
-                    var mapOptions = {
+                    var mapOptions = {//options de la map (zoom,centrage)
                         zoom: 14,
                         center: positionService
                     };
-                    map = new google.maps.Map($('#map_canvas')[0], mapOptions);
-                    markerService = new google.maps.Marker({
-                        position: positionService,
+                    map = new google.maps.Map($('#map_canvas')[0], mapOptions);//creation de la map dans l'element html souhaité
+                    markerService = new google.maps.Marker({//ajout d'un marker pour inndiquer ou se trouve le service
+                        position: positionService, //latitude et longitude que l'on recupere dans le fichier xml XMLPratique
                         map: map,
                         title: '<h4>' + stockElementXML[id].nom + '</h4>\n\
-                        <p>'+stockElementXML[id].adresse+'</p>'
+                        <p>' + stockElementXML[id].adresse + '</p>'
                     });
                     MaPosition(map);
-
-                    var infowindowService = new google.maps.InfoWindow({
+                   
+                    var infowindowService = new google.maps.InfoWindow({//fenetre d'information au dessus du marker pour indiquer le nom du service entre autre
                         content: '<h4>' + stockElementXML[id].nom + '</h4>\n\
                         <p>' + stockElementXML[id].adresse + '</p>',
                         position: positionService
                     });
-                    google.maps.event.addListener(markerService, 'click', function () {
-                        infowindowService.open(map, markerService);
+                    google.maps.event.addListener(markerService, 'click', function () {//evennement au click sur le marker 
+                        infowindowService.open(map, markerService);//ouvre la fenetre d'info
                     });
-
+                    //infopratique du service a completer
                     $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
                 <a href="tel:' + stockElementXML[id].tel + '">Appeler le ' + stockElementXML[id].tel + '</a>\n\
                 <p>' + stockElementXML[id].contenu + '</p>');
@@ -97,7 +98,7 @@ $(document).on('pageinit', function () {
         }
     });
 });
-
+//fonction de geolocation
 function MaPosition(map) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {

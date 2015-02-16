@@ -9,7 +9,6 @@ $(document).on('pageinit', function () {
             var retourHtmlUrgence = "";
             $(xml).find('item').each(function () {
                 var categorie = $(this).attr('category');
-
                 $(this).find('service').each(function (valeur) {
                     var elementXML = {
                         nom: $(this).find('nom').text(),
@@ -71,13 +70,13 @@ $(document).on('pageinit', function () {
                     };
                     map = new google.maps.Map($('#map_canvas')[0], mapOptions);//creation de la map dans l'element html souhaité
                     markerService = new google.maps.Marker({//ajout d'un marker pour inndiquer ou se trouve le service
-                        position: positionService,//latitude et longitude que l'on recupere dans le fichier xml XMLPratique
+                        position: positionService, //latitude et longitude que l'on recupere dans le fichier xml XMLPratique
                         map: map,
                         title: '<h4>' + stockElementXML[id].nom + '</h4>\n\
-                        <p>'+stockElementXML[id].adresse+'</p>'
+                        <p>' + stockElementXML[id].adresse + '</p>'
                     });
                     MaPosition(map);
-
+                   
                     var infowindowService = new google.maps.InfoWindow({//fenetre d'information au dessus du marker pour indiquer le nom du service entre autre
                         content: '<h4>' + stockElementXML[id].nom + '</h4>\n\
                         <p>' + stockElementXML[id].adresse + '</p>',

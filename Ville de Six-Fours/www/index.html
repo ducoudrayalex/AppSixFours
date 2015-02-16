@@ -60,7 +60,7 @@
                             <a href="#infostravaux" class="ui-btn menu ui-icon-info ui-btn-icon-left" data-transition="slide">Infotravo</a>
                         </div>
                         <div class="col-xs-4"> 
-                            <a href="signaler.html" class="ui-btn menu ui-icon-signaler ui-btn-icon-left" data-transition="flip">Signaler</a>
+                            <a href="#signaler" class="ui-btn menu ui-icon-signaler ui-btn-icon-left" data-transition="flip">Signaler</a>
                         </div>
                     </div>
                 </div>
@@ -260,6 +260,74 @@
             </div>
         </div>
         <!-- - - - - - - - - -FIN PAGE INFOSTRAVAUX- - - - - - - - - - -->
+        <div data-role="dialog" id="signaler" data-close-btn="right" data-theme="a">
+            <div data-role="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
+                <h1 class="ui-title" role="heading" aria-level="1">Signaler un problème</h1>
+            </div>
+            <script>
+                $('#signaler').on('pageshow', function () {
+                    var pictureSource;   // picture source
+                    var destinationType; // sets the format of returned value 
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                    function onDeviceReady() {
+                        pictureSource = navigator.camera.PictureSourceType;
+                        destinationType = navigator.camera.DestinationType;
+                        alert(pictureSource+'  '+destinationType);                      
+                    }
+                    function onPhotoDataSuccess(imageData) {
+                        var smallImage = $('#smallImage');
+                        smallImage.style.display = 'block';
+                        smallImage.src = "data:image/jpeg;base64," + imageData;
+                    }
+                    function onPhotoURISuccess(imageURI) {
+                        var largeImage = $('#largeImage');
+                        largeImage.style.display = 'block';
+                        largeImage.src = imageURI;
+                        
+                    }
+                    $('#capture').click(function(){
+                          // Take picture using device camera and retrieve image as base64-encoded string
+                        navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50});
+                        alert('ok capturePhoto');
+                    });
+                    //function capturePhoto() {
+                      
+                    //}
+                    function capturePhotoEdit() {
+                        // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
+                        navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 20, allowEdit: true});
+                    }
+                    function getPhoto(source) {
+                        // Retrieve image file location from specified source
+                        navigator.camera.getPicture(onPhotoURISuccess, onFail, {quality: 50,
+                            destinationType: destinationType.FILE_URI,
+                            sourceType: source});
+                        alert('ok getPhoto'),
+                    }
+                    function onFail(message) {
+                        alert('Failed because: ' + message);
+                    }
+                });
+            </script>
+            <form>
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom">
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom">
+                <label for="email">E-mail :</label>
+                <input type="email" name="email" id="email" placeholder="Votre email..">
+                <label for="info">Message :</label>
+                <textarea name="message" id="info"></textarea>
+                <a class="btn" id="capture" onclick="capturePhoto()">Capture Photo</a> <br>
+                <button id="importGalerie" onclick="getPhoto(pictureSource.PHOTOLIBRARY)">Importer depuis la librairie</button> <br>
+                <img style="display:none;width:60px;height:60px;" id="smallImage" src="" alt="petiteimage" />
+                <img style="display:none;" id="largeImage" src="" alt="grande image"/>
+            </form>
+
+            <div data-role="footer">
+            </div>
+        </div>
+        <script type="text/javascript" src="js/capture.js"></script>
         <script type="text/javascript" src="js/lecteurRSS.js"></script>
         <script type="text/javascript" src="js/Pratique.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></script>
