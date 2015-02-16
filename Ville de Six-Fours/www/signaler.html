@@ -24,6 +24,7 @@
 
     </head>
     <body>
+        
         <div data-role="page" id="signaler" data-close-btn="right" data-theme="a">
             <div data-role="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
                 <h1 class="ui-title" role="heading" aria-level="1">Signaler un problème</h1>
@@ -36,19 +37,12 @@
             <input type="email" name="email" id="email" placeholder="Votre email..">
             <label for="info">Message :</label>
             <textarea name="message" id="info"></textarea>
-            <button id="capture">Capture Photo</button> <br>
-            <button id="importGalerie">Importer depuis la librairie</button> <br>
+            <button id="capture" onclick="getPhoto()">Capture Photo</button> <br>
+            <button id="importGalerie" onclick="capturePhotoWithFile()">Importer depuis la librairie</button> <br>
             <img style="display:none;width:60px;height:60px;" id="smallImage" src="" alt="petiteimage" />
             <img style="display:none;" id="largeImage" src="" alt="grande image"/>
 
-            <div data-role="popup" id="popupPhoto" class="ui-content" data-theme="e" data-corners="false">
-                <h5 class="hlabel">Image URI</h5>
-                <p id="pictBox" class="content mesgBox"></p>
-                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                <img class="popphoto" id="popImage" src="" alt="image">
-            </div>
             <div data-role="footer">
-            <div id="cameraStatus"></div>
         </div>
         </div>
         

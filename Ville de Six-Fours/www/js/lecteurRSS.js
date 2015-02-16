@@ -2,22 +2,22 @@
 //var fluxRSSActus = "http://www.ville-six-fours.fr/feed/feedname";
 //var fluxRSSAgenda = "http://www.ville-six-fours.fr/feed/feedevents";
 function AjaxArticle() {
-    var stockFluxRSS = [];
-    var retourHtml = "";
-    $.ajax({
+    var stockFluxRSS = [];//tableau pour mettre les elements du flux rss
+    var retourHtml = "";//chaine de caractere pour inserer du html dans la page
+    $.ajax({//appel ajax en jquery
         type: "post",
         url: "http://www.ville-six-fours.fr/feed/feedname",
         dataType: "xml",
         success: function (xml) {
-            $(xml).find('item').each(function (id, valeur) {
-                var elementRSS = {
+            $(xml).find('item').each(function (id, valeur) {//navigation dans le fichier xml pour chaque item
+                var elementRSS = {//on stocke le contenu des balises qui nous intérressent de chaque item 
                     image: $(valeur).find('url').text(),
                     titre: $(valeur).find('title').text(),
                     //description: $(valeur).find('description').text(),
                     desc:$(valeur).find('desc').text(),
                     content: $(valeur).find('content').text()
                 };
-                stockFluxRSS.push(elementRSS);
+                stockFluxRSS.push(elementRSS);//on met chaque element dans le tableau pour le parcourir et recuperer les données que l'on veut
             });
 
 //            $.each(stockFluxRSS, function (id, valeur) {
@@ -28,24 +28,27 @@ function AjaxArticle() {
 //            });
             var i = stockFluxRSS.length;
 
-            $.each(stockFluxRSS, function (id, valeur) {
-                if (i % 2 === 0) {
+            $.each(stockFluxRSS, function (id, valeur) {//parcours du tableau
+                if (i % 2 === 0) {//test pour savoir si i est pair
                     retourHtml += '<div class="row"><div class="col-xs-12"><div class="col-xs-6"><div class="jumbotron">\
                     <a id="' + id + '" class="liencontenuactus"><h5>' + valeur.titre + '</h5>\
                     <img src="' + valeur.image + '" alt="image" class="img-responsive">\
                     <p>' + valeur.desc + '...</p></a></div></div>';
-
+                    //on creer une ligne composée de 12 colonnes par la classe col-xs-12(xs pour petit écran)
+                    //on utilise ensuite 6 colonnes pour mettre le lien,l'image et une description de l'article
                 } else {
                     retourHtml += '<div class="col-xs-6 "><div class="jumbotron">\
                     <a id="' + id + '" class="liencontenuactus"><h5>' + valeur.titre + '</h5>\
                     <img src="' + valeur.image + '" alt="image" class="img-responsive">\
                     <p>' + valeur.desc + '...</p></a></div></div></div></div>';
+                    //on utilise les 6 dernieres rangées disponnible pour creer un autre lien 
+                    //vers un autre article pour avoir une presentation de 2 articles par ligne
                 }
                 i++;
             });
             $("#elementFluxRSS").html(retourHtml);// insersion dans index.html  
-            $("#elementFluxRSS").listview('refresh');
-            $(".liencontenuactus").click(function () {
+            $("#elementFluxRSS").listview('refresh');//rafraichissement de la liste
+            $(".liencontenuactus").click(function () {//création du lien entre la liste et la page de l'article par une classe commune
                 var id = parseInt($(this).attr('id'));
                 $.mobile.changePage("#PageContenuFluxActus", {
                     transition: "slide"
@@ -53,6 +56,7 @@ function AjaxArticle() {
                 //console.log(stockFluxRSS[id].description);
                 $("#contenuRSSActus").html('<div class="jumbotron"><h2 class="well">' + stockFluxRSS[id].titre + '</h2>\
 		<p><img src="' + stockFluxRSS[id].image + '" class="img-responsive" alt="image article"><br>' + stockFluxRSS[id].content + '</p></div>');
+            //remplissage de la page d'article
             });
         },
         error: function (xml, status, xhr) {
@@ -66,6 +70,9 @@ function AjaxArticle() {
     });
 
 }
+/*
+ * fonction identique a celle des actus mais adapté a l'agenda
+ */
 function AjaxListview(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencontenu) {
     console.log(fluxRSS);
     var stockFluxRSS = [];
@@ -130,7 +137,7 @@ function AjaxListview(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencont
     });
 
 }
-$(document).ready(function () {
+$(document).ready(function () {//evennement d'appel des fonctions ci-dessus
     $('#Actus').on('pagebeforeshow', AjaxArticle);
     $('#Agenda').on('pagebeforeshow', function () {
         AjaxListview("http://centre-loisirs.ville-six-fours.fr/feed/feedeventsloisirs", "#listeFluxRSSAgenda", "#PageContenuFluxAgenda", "#contenuRSSAgenda", "liencontenuagenda");
