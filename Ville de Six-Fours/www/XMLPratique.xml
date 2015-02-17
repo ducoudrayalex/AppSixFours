@@ -3,22 +3,39 @@
     <item category="Sante">
         <service>
             <nom>CPAM</nom>
-            <tel>+323646</tel> 
-        </service>
-        
+            <tel>3646</tel> 
+            <lat>43.119646</lat>
+            <long>5.943011</long>
+            <adresse>42 r Emile Ollivier, 83000 TOULON</adresse>
+            <contenu>Votre caisse primaire d'assurance maladie vous informe sur vos droits et vos démarches.
+Vous voulez gagner du temps et simplifier vos démarches de santé ?
+Mieux suivre vos remboursements ?
+Notre site de services en ligne vous permet d'accéder à vos informations en un clic.
+HORAIRES : 
+Lundi 08:00-12:00/13:30-16:00
+Mardi 08:00-12:00/13:30-16:00
+Mercredi 08:00-12:00/13:30-16:00
+Jeudi 08:00-12:00/13:30-16:00
+Vendredi 08:00-12:00/13:30-16:00</contenu>
+        </service>      
     </item>
     <item category="Urgence">
         <service>
             <nom>Police</nom>
             <tel>17</tel>
             <lat>43.094139</lat>
-            <long>5.838518</long>  
+            <long>5.838518</long>
+            <adresse>
+                Commissariat de secteur de Six-Fours - av De Lattre de Tassigny, 83140 SIX FOURS LES PLAGES
+            </adresse>  
         </service>
         <service>
             <nom>Pompier</nom>
             <tel>18</tel>  
             <lat>43.099818</lat>
             <long>5.817243</long>
+            <adresse>av Cap Nègre, 83140 SIX FOURS LES PLAGES</adresse>
+                
         </service>
         <service>
             <nom>Samu</nom>
@@ -35,21 +52,42 @@
         <service>
             <nom>Pôle emploi</nom>
             <tel>3949</tel>  
+            <adresse>165 chemin des Négadoux, 83140 Six-Fours-les-Plages</adresse>
+            <contenu>Horaires d'ouverture
+Du Lundi au Jeudi : de 08h30 à 16h15
+Le Vendredi : de 08h30 à 12h30</contenu>
+<site>http://www.pole-emploi.fr</site>
         </service>       
     </item>
     <item category="Administration">
         <service>
             <nom>Mairie</nom>
-            <tel>04 94 34 93 00</tel>  
+            <tel>04.94.34.93.00  </tel>
+            <tel>Observation/Doléances : 0800 00 88 08</tel>  
             <lat>43.093173</lat>
             <long>5.839327</long>
-            <adresse>2 Place 18 Juin 1940, 83140 Six-Fours-les-Plages</adresse>
+            <adresse>Hôtel de ville de Six-Fours-les-Plages</adresse>
             <contenu>Nos bureaux sont ouverts du lundi au vendredi de 8h30 à 16h30
-et le samedi matin de 8h30 à 11h.</contenu>
+                et le samedi matin de 8h30 à 11h.</contenu>
         </service>        
         <service>
             <nom>Allo service</nom>
             <tel>3939</tel>  
-        </service>       
+        </service>
+        <service>
+            <nom>régie de l'eau</nom>
+            <tel>04.94.34.93.01</tel>
+            <adresse>81 avenue de la Mer, 83140 Six-Fours</adresse>
+        </service>  
+        <service>
+            <nom>EDF</nom>
+            <tel>0 800 123 333</tel>
+        </service>   
+        <service>
+            <nom>TPM (Toulon Provence Méditerranée)</nom>
+            <tel>04 94 93 83 00</tel>
+            <adresse>107 Boulevard Henri Fabre - CS 30536 83041 TOULON Cedex 09</adresse>
+            <site>http://www.tpm-agglo.fr</site>
+        </service>  
     </item>
 </root>

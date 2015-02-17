@@ -3,7 +3,10 @@
     <item category="Sante">
         <service>
             <nom>CPAM</nom>
-            <tel>+323646</tel> 
+            <tel>3646</tel> 
+            <lat>43.119646</lat>
+            <long>5.943011</long>
+            <adresse>42 r Emile Ollivier, 83000 TOULON</adresse>
         </service>
         
     </item>
@@ -43,7 +46,7 @@
             <tel>04 94 34 93 00</tel>  
             <lat>43.093173</lat>
             <long>5.839327</long>
-            <adresse>2 Place 18 Juin 1940, 83140 Six-Fours-les-Plages</adresse>
+            <adresse>Hôtel de ville de Six-Fours-les-Plages</adresse>
             <contenu>Nos bureaux sont ouverts du lundi au vendredi de 8h30 à 16h30
 et le samedi matin de 8h30 à 11h.</contenu>
         </service>        

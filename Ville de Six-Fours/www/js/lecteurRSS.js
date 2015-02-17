@@ -26,7 +26,7 @@ function AjaxArticle() {
 //                <small>' + valeur.datePublication + '</small>\
 //                </a></li>';
 //            });
-            var i = stockFluxRSS.length;
+            var i = 0;
 
             $.each(stockFluxRSS, function (id, valeur) {//parcours du tableau
                 if (i % 2 === 0) {//test pour savoir si i est pair
