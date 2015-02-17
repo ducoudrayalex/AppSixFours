@@ -135,12 +135,71 @@ function AjaxListview(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencont
 
         }
     });
+}
 
+
+function AjaxListviewAvoir(fluxRSS, idlistview, idcontenuflux, idcontenuRSS, liencontenu) {
+    console.log(fluxRSS);
+    var stockFluxRSS = [];
+    var retourHtml = "";
+    $.ajax({
+        type: "post",
+        url: fluxRSS,
+        dataType: "xml",
+        success: function (xml) {
+            $(xml).find('item').each(function (id, valeur) {
+                var elementRSS = {
+                    image: $(valeur).find('url').text(),
+                    titre: $(valeur).find('title').text(),
+                    desc: $(valeur).find('desc').text(),
+                    content: $(valeur).find('content').text()
+                };
+                stockFluxRSS.push(elementRSS);
+            });
+
+            $.each(stockFluxRSS, function (id, valeur) {
+                retourHtml += '<li>\
+                <a id ="' + id + '"  class="' + liencontenu + '">\
+                <img src="' + valeur.image + '" class="img-responsive" alt="image"><p><h1 class="titre">' + valeur.titre + '</h1></p>\
+                <small>' + valeur.desc + '...</small>\
+                </a></li>';
+            });
+
+//            $.each(stockFluxRSS, function (id, valeur) {
+//                retourHtml += '<div class="col-xs-12 jumbotron">\
+//              <a id="' + id + '" class="' + liencontenu + '"><p class="titre">' + valeur.titre + '</p>\
+//              <img src="' + valeur.image + '" alt="image" class="img-responsive"></div>';
+//            });
+            $(idlistview).html(retourHtml);// insersion dans index.html 
+            $(idlistview).listview('refresh');
+            //$(idlistview).listview('refresh');
+            $('.' + liencontenu).click(function () {
+                var id = parseInt($(this).attr('id'));
+                $.mobile.changePage(idcontenuflux, {
+                    transition: "slide"
+                });
+                //console.log(stockFluxRSS[id].description);
+                $(idcontenuRSS).html('<div class="jumbotron"><h3 class="well">' + stockFluxRSS[id].titre + '</h3>\
+					<p><img src="' + stockFluxRSS[id].image + '" class="img-responsive" alt="image article"><br>' + stockFluxRSS[id].content + '</p></div>');
+            });
+
+        },
+        error: function (xml, status, xhr) {
+            alert(status + " : Pour consulter les actus et l'agenda veuillez vous connecter à internet");
+        },
+        complete: function () {
+            //$(idlistview).listview('refresh');
+
+        }
+    });
 }
 $(document).ready(function () {//evennement d'appel des fonctions ci-dessus
     $('#Actus').on('pagebeforeshow', AjaxArticle);
     $('#Agenda').on('pagebeforeshow', function () {
         AjaxListview("http://centre-loisirs.ville-six-fours.fr/feed/feedeventsloisirs", "#listeFluxRSSAgenda", "#PageContenuFluxAgenda", "#contenuRSSAgenda", "liencontenuagenda");
+    });
+    $('#Avoir').on('pagebeforeshow',function(){
+        AjaxListviewAvoir("http://www.ville-six-fours.fr/feed/feedpatrimoine",'#listeFluxRSSAvoir','#PageContenuFluxAvoir','#contenuRSSAvoir',"liencontenuavoir");
     });
 });
 

@@ -102,7 +102,7 @@
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Agenda</h1>
                 <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
-                    <a href="signaler.html" data-transition="flip" data-rel="dialog" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
                     <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
                 </div>
             </div>
@@ -111,7 +111,7 @@
         </div>
         <!-- - - - - - - - -FIN PAGE AGENDA- - - - - - - - - - -->
         <!-- - - - - - - - - PAGE A VOIR - - - - - - - - -->
-        <div data-role="page" id="Avoir" data-title="A voir">
+        <div data-role="page" id="Avoir" data-title="A voir" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>A voir</h1>
@@ -121,6 +121,9 @@
                 </div>
             </div>
             <div data-role="main" class="ui-content">
+                <ul id="listeFluxRSSAvoir" data-filter="true" data-role="listview" data-inset="true" data-theme="b" >
+
+                </ul>
             </div>
             <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
@@ -132,6 +135,18 @@
                         <li><a href="#infostravaux" data-icon="info" data-transition="flip">Infotravo</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div data-role="page" id="PageContenuFluxAvoir" data-theme="d" data-title="A voir">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
+                <h1>A voir</h1>
+                <div data-role="control-group" data-type="horizontal" class="ui-btn-right">
+                    <a href="#signaler" data-transition="flip" data-rel="dialog" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-alert ui-btn-icon-notext">signaler</a>
+                    <a href="#accueil" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">home</a>
+                </div>
+            </div>
+            <div data-role="content" id="contenuRSSAvoir">
             </div>
         </div>
         <!-- - - - - - - - - -FIN PAGE A VOIR- - - - - - - - -->

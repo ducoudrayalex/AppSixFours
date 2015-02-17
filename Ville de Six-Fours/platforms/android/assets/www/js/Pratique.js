@@ -62,9 +62,13 @@ function listePratique() {
                     transition: "slide"
                 });
 
-
-                $('#mapCanvas').html('<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + stockElementXML[id].adresse + '&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></iframe>');
-                //infopratique du service a completer
+                if (!stockElementXML[id].adresse) {
+                    $('#mapCanvas').hide();
+                } else {
+                    $('#mapCanvas').show();
+                    $('#mapCanvas').html('<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + stockElementXML[id].adresse + '&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></iframe>');
+                }
+                
 //                var mapOptions = {
 //                    zoom: 14,
 //                    center: new google.maps.LatLng(43.093062, 5.839225)
@@ -90,6 +94,7 @@ function listePratique() {
 //                        alert('Geocode was not successful for the following reason: ' + status);
 //                    }
 //                });
+//infopratique du service a completer
                 $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
                 <p>Téléphone : ' + stockElementXML[id].tel + '</p>\n\
                 <p>' + stockElementXML[id].contenu + '</p>');
