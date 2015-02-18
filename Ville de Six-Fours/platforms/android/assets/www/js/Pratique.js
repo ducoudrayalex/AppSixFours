@@ -1,5 +1,3 @@
-
-
 function listePratique() {
     $.ajax({
         type: 'get',
@@ -21,7 +19,6 @@ function listePratique() {
                         adresse: $(this).find('adresse').text(),
                         contenu: $(this).find('contenu').text()
                     };
-                    console.log(elementXML);
                     stockElementXML.push(elementXML);
                 });
             });
@@ -62,43 +59,22 @@ function listePratique() {
                     transition: "slide"
                 });
 
-                if (!stockElementXML[id].adresse) {
+                if (!stockElementXML[id].adresse | !stockElementXML[id].lat && !stockElementXML[id].long) {
                     $('#mapCanvas').hide();
                 } else {
                     $('#mapCanvas').show();
-                    $('#mapCanvas').html('<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + stockElementXML[id].adresse + '&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></iframe>');
+                    $('#mapCanvas').html('<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU&q='+stockElementXML[id].lat+','+stockElementXML[id].long+'"></iframe>');
                 }
-                
-//                var mapOptions = {
-//                    zoom: 14,
-//                    center: new google.maps.LatLng(43.093062, 5.839225)
-//                };
-//                var geocoder = new google.maps.Geocoder();
-//                var map = new google.maps.Map($('#mapCanvas')[0],
-//                        mapOptions);
-////                var infowindow = new google.maps.InfoWindow({
-////                    content: '<h3>' + stockElementXML[id].nom + '</h3>\n\
-////                            <p>' + stockElementXML[id].contenu + '</p>'
-////                });
-//                geocoder.geocode({'address': stockElementXML[id].adresse}, function (results, status) {
-//                    if (status === google.maps.GeocoderStatus.OK) {
-//                        map.setCenter(results[0].geometry.location);
-//                        var marker = new google.maps.Marker({
-//                            map: map,
-//                            position: results[0].geometry.location
-//                        });
-////                        google.maps.event.addListener(marker, 'click', function () {
-////                            infowindow.open(map, marker);
-////                        });
-//                    } else {
-//                        alert('Geocode was not successful for the following reason: ' + status);
-//                    }
-//                });
+               
 //infopratique du service a completer
-                $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
+                if (stockElementXML[id].tel) {
+                    $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
                 <p>Téléphone : ' + stockElementXML[id].tel + '</p>\n\
                 <p>' + stockElementXML[id].contenu + '</p>');
-
+                } else {
+                    $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
+                <p>' + stockElementXML[id].contenu + '</p>');
+                }
             });
         },
         error: function (status) {
@@ -106,6 +82,7 @@ function listePratique() {
         }
     });
 }
+
 $(document).ready(function () {
     $('#Pratique').on('pageshow', function () {
         listePratique();

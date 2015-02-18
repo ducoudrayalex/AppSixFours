@@ -219,8 +219,10 @@ C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\capture.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\demo1.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\demo2.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\gmap3.min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\index.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery-2.1.3.min.js \
+C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.gmap-1.1.0-min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.mobile-1.4.5.min.js \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.mobile-1.4.5.min.map \
 C:\Users\stage\Documents\GitHub\AppSixFours\Ville de Six-Fours\platforms\android\assets\www\js\jquery.ui.map.full.min.js \

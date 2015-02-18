@@ -207,4 +207,7 @@ ul.form {
     background:#efefef;
 }
 
-
+#mapCanvas{
+ height: 350px;
+ width: 100%;
+}

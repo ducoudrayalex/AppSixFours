@@ -19,7 +19,6 @@ function listePratique() {
                         adresse: $(this).find('adresse').text(),
                         contenu: $(this).find('contenu').text()
                     };
-                    console.log(elementXML);
                     stockElementXML.push(elementXML);
                 });
             });
@@ -60,18 +59,22 @@ function listePratique() {
                     transition: "slide"
                 });
 
-                if (!stockElementXML[id].adresse) {
+                if (!stockElementXML[id].adresse | !stockElementXML[id].lat && !stockElementXML[id].long) {
                     $('#mapCanvas').hide();
                 } else {
                     $('#mapCanvas').show();
-                    $('#mapCanvas').html('<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + stockElementXML[id].adresse + '&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></iframe>');
+                    $('#mapCanvas').html('<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU&q='+stockElementXML[id].lat+','+stockElementXML[id].long+'"></iframe>');
                 }
-
+               
 //infopratique du service a completer
-                $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
+                if (stockElementXML[id].tel) {
+                    $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
                 <p>Téléphone : ' + stockElementXML[id].tel + '</p>\n\
                 <p>' + stockElementXML[id].contenu + '</p>');
-
+                } else {
+                    $("#infoPratique").html('<h3 style="text-align:center;font-weight:bold;">' + stockElementXML[id].nom + '</h3><br>\
+                <p>' + stockElementXML[id].contenu + '</p>');
+                }
             });
         },
         error: function (status) {

@@ -8,15 +8,15 @@
             <long>5.943011</long>
             <adresse>42 r Emile Ollivier, 83000 TOULON</adresse>
             <contenu>Votre caisse primaire d'assurance maladie vous informe sur vos droits et vos démarches.
-Vous voulez gagner du temps et simplifier vos démarches de santé ?
-Mieux suivre vos remboursements ?
-Notre site de services en ligne vous permet d'accéder à vos informations en un clic.
-HORAIRES : 
-Lundi 08:00-12:00/13:30-16:00
-Mardi 08:00-12:00/13:30-16:00
-Mercredi 08:00-12:00/13:30-16:00
-Jeudi 08:00-12:00/13:30-16:00
-Vendredi 08:00-12:00/13:30-16:00</contenu>
+                Vous voulez gagner du temps et simplifier vos démarches de santé ?
+                Mieux suivre vos remboursements ?
+                Notre site de services en ligne vous permet d'accéder à vos informations en un clic.
+                HORAIRES : 
+                Lundi 08:00-12:00/13:30-16:00
+                Mardi 08:00-12:00/13:30-16:00
+                Mercredi 08:00-12:00/13:30-16:00
+                Jeudi 08:00-12:00/13:30-16:00
+                Vendredi 08:00-12:00/13:30-16:00</contenu>
         </service>      
     </item>
     <item category="Urgence">
@@ -54,9 +54,9 @@ Vendredi 08:00-12:00/13:30-16:00</contenu>
             <tel>3949</tel>  
             <adresse>165 chemin des Négadoux, 83140 Six-Fours-les-Plages</adresse>
             <contenu>Horaires d'ouverture
-Du Lundi au Jeudi : de 08h30 à 16h15
-Le Vendredi : de 08h30 à 12h30</contenu>
-<site>http://www.pole-emploi.fr</site>
+                Du Lundi au Jeudi : de 08h30 à 16h15
+                Le Vendredi : de 08h30 à 12h30</contenu>
+            <site>http://www.pole-emploi.fr</site>
         </service>       
     </item>
     <item category="Administration">
@@ -90,16 +90,49 @@ Le Vendredi : de 08h30 à 12h30</contenu>
             <site>http://www.tpm-agglo.fr</site>
         </service>  
     </item>
-    <item category="parking">
-        <parking>
+    <item category="Parking">
+        <service>
             <nom>Parking de l'église</nom>
-            <long>43.091405</long>
-            <lat>5.837087</lat>
-        </parking>
-        <parking>
-            <nom>parking de l'hotel de ville</nom>
-            <long>43.09196566</long>
-            <lat>5.8389169</lat>
-        </parking>
+            <lat>43.091405</lat>
+            <long>5.837087</long>
+            <contenu>
+                Gratuit
+            </contenu>         
+        </service>
+        <service>
+            <nom>Parking de l'hotel de ville</nom>
+            <lat>43.09196566</lat>
+            <long>5.8389169</long>  
+            <contenu>
+                156 places
+                Tarifs : 1ère heure gratuite - 2ème heure : 1 € – au-delà de la 2ème heure : forfait journalier de 2,50 €
+                Abonnements : hebdomadaire : 20  € - quinzaine : 30  € - mensuel : 40  € - semestriel : 200 € - annuel : 400  €
+            </contenu>         
+        </service>
+        <service>
+            <nom>Parking du cinéma Six N’étoiles avenue Vincent Picareau</nom>
+            <lat>43.09274914</lat>
+            <long>5.84144622</long>
+            <contenu>34 places
+                Zone de longue durée limitée à 11 heures consécutives du 1er janvier au 31 décembre de chaque année.
+                Jours et horaires : du lundi au vendredi inclus de 9h à 23h
+                Tarifs : somme minimale : 0,50 € – somme maximale : 10,50 €</contenu>
+        </service>
+        <service>
+            <nom>Parking Tassigny</nom>
+            <lat>43.09379898</lat>
+            <long>5.84096611</long>
+            <contenu>
+                101 places. Ouvert du lundi au samedi de 7h à 20h. Il sera fermé du samedi 20h au lundi 7h ainsi que les jours fériés sauf pour les abonnés. Les usagers ont la possibilité de payer le stationnement pour 2 heures (dont la 1ère heure gratuite) ou à la journée ou par abonnement.
+            </contenu>
+        </service>
+        <service>
+            <nom>Parking Espace culturel André Malraux</nom>
+            <lat>43.09351694</lat>
+            <long>5.84300458</long>
+            <contenu>
+                
+            </contenu>
+        </service>
     </item>
 </root>
