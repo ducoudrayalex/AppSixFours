@@ -90,4 +90,16 @@ Le Vendredi : de 08h30 à 12h30</contenu>
             <site>http://www.tpm-agglo.fr</site>
         </service>  
     </item>
+    <item category="parking">
+        <parking>
+            <nom>Parking de l'église</nom>
+            <long>43.091405</long>
+            <lat>5.837087</lat>
+        </parking>
+        <parking>
+            <nom>parking de l'hotel de ville</nom>
+            <long>43.09196566</long>
+            <lat>5.8389169</lat>
+        </parking>
+    </item>
 </root>
