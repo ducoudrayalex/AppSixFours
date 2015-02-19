@@ -31,7 +31,7 @@ function listePratique() {
                 } else {
                     retourHtmlService += '<li category="' + valeur.category + '" >\
                 <a id ="' + id + '"  class="liencontenuPratique">\
-                <p><h4 class="nom">' + valeur.nom + '</h4></p>\
+                <p class="nom">' + valeur.nom + '</p>\
                 </a></li>';
                 }
             });

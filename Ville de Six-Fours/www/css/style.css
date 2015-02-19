@@ -14,7 +14,7 @@ h5{
     font-family: 'Times New Roman',Georgia,sans-serif;
 }
 .jumbotron p{
-    font-size:10px;
+    font-size:12px;
     font-family: 'Times New Roman',Georgia,sans-serif;
     color:black;
 }
@@ -47,7 +47,9 @@ h4{
 .ui-header{
     width:100%;
 }
-
+.nom{
+    
+}
 .container-fluid{
     padding-left:0px;
     width:100%;

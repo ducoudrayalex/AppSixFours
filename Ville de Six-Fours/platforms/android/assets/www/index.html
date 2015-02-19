@@ -19,8 +19,8 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="cordova.js" type="text/javascript"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyDSlL_s0uDPis7IK5HgUsJDSZvGlF-w6ZU"></script>
-        <script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
-        <script type="text/javascript" src="js/gmap3.min.js"></script>
+<!--        <script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
+        <script type="text/javascript" src="js/gmap3.min.js"></script>-->
     </head>
     <body> 
 
@@ -193,7 +193,7 @@
         </div>
         <!-- - - - - - - - -FIN PAGE ACTUS- - - - - - - - -->
         <!-- - - - -- - - -PAGE PRATIQUE- - - - - - - - -->
-        <div data-role="page" id="Pratique" data-title="Pratique">
+        <div data-role="page" id="Pratique" data-title="Pratique" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Pratique</h1>
@@ -206,17 +206,17 @@
                 <div data-role="tabs">
                     <div data-role="navbar">
                         <ul>
-                            <li><a href="#services" class="ui-btn-active ui-state-persist">Services</a></li>
-                            <li><a href="#urgences">Urgences</a></li>
+                            <li><a href="#services" data-theme="b" class="ui-btn-active">Services</a></li>
+                            <li><a href="#urgences" data-theme="b">Urgences</a></li>
                         </ul>
                     </div>
                     <div id="services">
-                        <ul data-role="listview" data-filter="true" id="listServices" data-autodividers="true" data-inset="true" data-theme="a">
+                        <ul data-role="listview" data-filter="true" id="listServices" data-autodividers="true" data-inset="true" data-theme="b">
 
                         </ul>
                     </div>
                     <div id="urgences">
-                        <ul data-role="listview" data-filter="true" id="listUrgences" data-inset="true" data-theme="a">
+                        <ul data-role="listview" data-filter="true" id="listUrgences" data-inset="true" data-theme="b">
 
                         </ul>
                     </div>
@@ -234,7 +234,7 @@
                 </div>
             </div>
         </div>
-        <div data-role="page" id="PageContenuPratique">
+        <div data-role="page" id="PageContenuPratique" data-theme="d">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
                 <h1>Pratique</h1>
@@ -253,7 +253,7 @@
         </div>
         <!-- - - - - - - - - - -FIN PAGE PRATIQUE- - - - - - - - -->
         <!-- - - - - - - - - - -PAGE INFOSTRAVAUX- - - - - - - - - -->
-        <div data-role="page" id="infostravaux" data-title="Travaux">
+        <div data-role="page" id="infostravaux" data-title="Travaux" data-theme="d">
 
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext" data-rel="back">back</a>
